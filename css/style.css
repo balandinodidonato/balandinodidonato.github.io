@@ -12,6 +12,7 @@
 body {
   font-family: 'Poppins', sans-serif;
   color: #555555;
+  background-color: #262626;
 }
 
 h1,
@@ -20,11 +21,11 @@ h3,
 h4,
 h5,
 h6 {
-  color: #000000;
+  color: #f2f2f2;
 }
 
 a {
-  color: #000000;
+  color: #f2f2f2;
   transition: all .15s ease;
 }
 
@@ -34,17 +35,17 @@ a:hover {
 }
 
 .link-two {
-  color: #000000;
+  color: #f2f2f2;
   transition: all .15s ease;
 }
 
 .link-two:hover {
   text-decoration: underline;
-  color: #000000;
+  color: #f2f2f2;
 }
 
 .link-three {
-  color: #000000;
+  color: #f2f2f2;
   transition: all .15s ease;
   text-decoration: underline;
 }
@@ -56,17 +57,17 @@ a:hover {
 }
 
 .link-one {
-  color: #000000;
+  color: #f2f2f2;
   transition: all .5s ease;
 }
 
 .link-one:hover {
-  color: #000000;
+  color: #f2f2f2;
   text-decoration: none;
 }
 
 .link-icon {
-  color: #000000;
+  color: #f2f2f2;
   font-weight: 500;
 }
 
@@ -99,7 +100,7 @@ a:hover {
 }
 
 .color-a {
-  color: #000000;
+  color: #f2f2f2;
 }
 
 .color-b {
@@ -121,7 +122,7 @@ a:hover {
 /*------/ Nav Pills  /------*/
 
 .nav-pills-a.nav-pills .nav-link {
-  color: #000000;
+  color: #f2f2f2;
   position: relative;
   font-weight: 600;
 }
@@ -183,7 +184,7 @@ a:hover {
   margin: 0 .2rem;
   border-color: transparent;
   padding: .5rem .8rem;
-  color: #000000;
+  color: #f2f2f2;
 }
 
 .pagination-a .pagination .page-link:hover,
@@ -230,7 +231,7 @@ a:hover {
   display: table-cell;
   vertical-align: top;
   font-size: 36px;
-  color: #000000;
+  color: #f2f2f2;
   width: 50px;
   padding-top: 8px;
 }
@@ -362,8 +363,8 @@ a:hover {
   width: 16px;
   height: 9px;
   margin: 5px 5px;
-  background: #000000;
-  border: 0px solid #000000;
+  background: #f2f2f2;
+  border: 0px solid #f2f2f2;
   display: block;
   transition: all 0.6s ease-in-out;
   cursor: pointer;
@@ -390,7 +391,7 @@ a:hover {
 .owl-arrow .owl-nav .owl-next {
   display: inline-block;
   transition: all 0.6s ease-in-out;
-  color: #000000;
+  color: #f2f2f2;
 }
 
 .owl-arrow .owl-nav .owl-prev.disabled,
@@ -540,7 +541,7 @@ a:hover {
 }
 
 .navbar-default .nav-search {
-  color: #000000;
+  color: #f2f2f2;
   font-size: 1.5rem;
 }
 
@@ -565,7 +566,7 @@ a:hover {
 .navbar-default.navbar-trans .nav-link,
 .navbar-default.navbar-reduce .nav-link {
   font-size: 1.1rem;
-  color: #000000;
+  color: #f2f2f2;
   font-weight: 600;
   letter-spacing: 0.030em;
   transition: all 0.1s ease-in-out;
@@ -595,7 +596,7 @@ a:hover {
 
 .navbar-default.navbar-trans .nav-link:hover,
 .navbar-default.navbar-reduce .nav-link:hover {
-  color: #000000;
+  color: #f2f2f2;
 }
 
 .navbar-default.navbar-trans .nav-link:hover:before,
@@ -623,14 +624,14 @@ a:hover {
 }
 
 .navbar-default.navbar-trans .nav-link:hover {
-  color: #000000;
+  color: #f2f2f2;
 }
 
 .navbar-default.navbar-trans .show > .nav-link,
 .navbar-default.navbar-trans .active > .nav-link,
 .navbar-default.navbar-trans .nav-link.show,
 .navbar-default.navbar-trans .nav-link.active {
-  color: #000000;
+  color: #f2f2f2;
 }
 
 .navbar-default.navbar-reduce {
@@ -640,7 +641,7 @@ a:hover {
 }
 
 .navbar-default.navbar-reduce .nav-link {
-  color: #000000;
+  color: #f2f2f2;
 }
 
 .navbar-default.navbar-reduce .nav-link:before {
@@ -648,18 +649,18 @@ a:hover {
 }
 
 .navbar-default.navbar-reduce .nav-link:hover {
-  color: #000000;
+  color: #f2f2f2;
 }
 
 .navbar-default.navbar-reduce .show > .nav-link,
 .navbar-default.navbar-reduce .active > .nav-link,
 .navbar-default.navbar-reduce .nav-link.show,
 .navbar-default.navbar-reduce .nav-link.active {
-  color: #000000;
+  color: #f2f2f2;
 }
 
 .navbar-default.navbar-reduce .navbar-brand {
-  color: #000000;
+  color: #f2f2f2;
 }
 
 .navbar-default .dropdown .dropdown-menu {
@@ -717,7 +718,7 @@ a:hover {
 
 .navbar-toggler span {
   display: block;
-  background-color: #000000;
+  background-color: #f2f2f2;
   height: 3px;
   width: 25px;
   margin-top: 4px;
@@ -848,7 +849,7 @@ a:hover {
   height: 100%;
   visibility: hidden;
   z-index: 1035;
-  background-color: #000000;
+  background-color: #f2f2f2;
   opacity: .4;
 }
 
@@ -858,7 +859,7 @@ a:hover {
   top: 2rem;
   font-size: 3.5rem;
   line-height: 1;
-  color: #000000;
+  color: #f2f2f2;
   cursor: pointer;
   transition: all 0.3s ease;
 }
@@ -1140,7 +1141,7 @@ a:hover {
 
 .summary-list {
   padding-right: 1rem;
-  color: #000000;
+  color: #f2f2f2;
 }
 
 .summary-list .list {
@@ -1158,7 +1159,7 @@ a:hover {
 
 .property-agent ul {
   line-height: 2;
-  color: #000000;
+  color: #f2f2f2;
 }
 
 .property-agent .socials-a {
@@ -1220,7 +1221,7 @@ a:hover {
   font-weight: 300;
   margin-bottom: 4rem;
   line-height: 1.6;
-  color: #000000;
+  color: #f2f2f2;
   font-weight: 400;
 }
 
@@ -1231,7 +1232,7 @@ a:hover {
 .post-content .blockquote {
   padding: 1rem 3rem 1.7rem 3rem;
   border-left: 3px solid #2eca6a;
-  color: #000000;
+  color: #f2f2f2;
 }
 
 .post-content .blockquote footer {
@@ -1282,7 +1283,7 @@ a:hover {
 }
 
 .box-comments .list-comments a {
-  color: #000000;
+  color: #f2f2f2;
 }
 
 .box-comments .list-comments span {
@@ -1322,7 +1323,7 @@ a:hover {
 
 .card-box-ico span {
   font-size: 4rem;
-  color: #000000;
+  color: #f2f2f2;
 }
 
 .title-c {
@@ -1445,7 +1446,7 @@ a:hover {
   content: ' ';
   width: 35px;
   height: 2px;
-  background-color: #000000;
+  background-color: #f2f2f2;
   position: absolute;
   bottom: -15px;
 }
@@ -1515,7 +1516,7 @@ a:hover {
   display: -ms-inline-flexbox;
   display: inline-flex;
   font-size: 1.2rem;
-  color: #000000;
+  color: #f2f2f2;
 }
 
 /*======================================
@@ -1596,7 +1597,7 @@ footer .credits {
 }
 
 .form-a label {
-  color: #000000;
+  color: #f2f2f2;
   position: relative;
 }
 
@@ -1635,22 +1636,22 @@ footer .credits {
 }
 
 .btn.btn-a {
-  background-color: #000000;
+  background-color: #f2f2f2;
   color: #ffffff;
 }
 
 .btn.btn-a:hover {
   background-color: #2eca6a;
-  color: #000000;
+  color: #f2f2f2;
 }
 
 .btn.btn-b {
   background-color: #2eca6a;
-  color: #000000;
+  color: #f2f2f2;
 }
 
 .btn.btn-b:hover {
-  background-color: #000000;
+  background-color: #f2f2f2;
   color: #ffffff;
 }
 
