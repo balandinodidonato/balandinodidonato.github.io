@@ -11,7 +11,6 @@ let country;
 let audioONOFF;
 let audioBtn;
 let submitBtn;
-let covidData;
 let allData;
 let visualisation;
 
@@ -24,13 +23,11 @@ function gotData(data){
 }
 
 function setup() {
-  const widthCanvas = windowWidth*0.5;
+  const widthCanvas = windowWidth-10;
   const heightCanvas = widthCanvas;
 
   audioBtn = document.getElementById("audio").addEventListener("click", audioTgl); 
   submitBtn = document.getElementById("submit").addEventListener("click", getherData); 
-
-  countryText = document.getElementById("country");
   cvnSonification = createCanvas(widthCanvas, heightCanvas);
 
   oscSetUp();
@@ -49,27 +46,23 @@ function audioTgl(){
 
 function getherData(){
   clearInterval(visualisation);
+  dailyCasesArray = [];
 
   country = document.getElementById("country").value.toString();
-  
-  covidData = allData[country];// this is how you access data which objects id contain spaces
 
   // from line 20 till 24 is the code to extract the maximum number of cdaily covid cases
-  for (var day=1; day<covidData.length; day++){ // for loop to iterate across the whole data set
+  for (var day=1; day<allData[country].length; day++){ // for loop to iterate across the whole data set
     dailyCasesArray.push(dailyCases(day)); // add number each daily cases into array
   }
   maxCases = max(dailyCasesArray); // calculates the maximum of number of daily cases
 
-  console.log(country);
-
-  drawBackground();
-
-  counter = 0;
+  resetVisualisation();
+  
   visualisation = setInterval(drawData, 20);
 }
 
 function drawData() {
-  if(covidData){ // Cheks that the CovidData is filled.
+  if(allData[country]){ // Cheks that the allData[country] is filled.
 
     increment = deltaTime / 50; // delataTime is time difference between the beginning of the previous frame and the beginning of the current frame in milliseconds.
     // this allows to to set out the increment of our counter in function of time (faster or slower). The higher is the divided the slower will be the increment and so the progression from one data to the other one.
@@ -90,16 +83,15 @@ function drawData() {
       wave.amp(0, 0.3);
      }
     
-    
       var x = map(counter, 0, arrayLength, 0, width); // advance the x of the line according to the counter value
-      var y = map(currentDailyCases, 0, maxCases, height-30, 15); // sents the y of the line according to number of cases
+      var y = map(currentDailyCases, 0, maxCases, height-30, 30); // sents the y of the line according to number of cases
       stroke(255);
       line(x, height-30, x, y);
 
       index1 = index0;
 
       if(index0>=arrayLength-1){ // this redraws the background so data the data visualisation can restart
-        drawBackground();
+        resetVisualisation();
       }
     }
   }
@@ -107,21 +99,20 @@ function drawData() {
 
 
 function dailyCases(index){
-  return covidData[index].confirmed - covidData[index-1].confirmed; // extracts the number of daily cases. We calculated this in
+  return allData[country][index].confirmed - allData[country][index-1].confirmed; // extracts the number of daily cases. We calculated this in
 }
 
-function drawBackground(){
-  if(covidData){
-    background(240);
-    arrayLength = covidData.length-1; // calcultes the lenght of the array
-    text(covidData[0].date, 2, height-10); // draw the date of the first day in the array
-    text(covidData[int(arrayLength/2)].date, (width/2)-30, height-10); // draw the date of the day of half of the perdiod of data
-    text(covidData[arrayLength].date, width-60, height-10); // draw the date of the last day the data were pulled
-    text("Country: "+country+"     Range: 0-"+maxCases+" cases", 5, 15); // draws the text about the
-    fill(50);
-    noStroke();
-    rect(0, 20, width, height-48);
-  }
+function resetVisualisation(){
+  background(240);
+  arrayLength = allData[country].length-1; // calcultes the lenght of the array
+  text(allData[country][0].date, 2, height-10); // draw the date of the first day in the array
+  text(allData[country][int(arrayLength/2)].date, (width/2)-30, height-10); // draw the date of the day of half of the perdiod of data
+  text(allData[country][arrayLength].date, width-60, height-10); // draw the date of the last day the data were pulled
+  text("Country: "+country+"     Range: 0-"+maxCases+" cases", 5, 15); // draws the text about the
+  fill(50);
+  noStroke();
+  rect(0, 20, width, height-48);
+  counter = 0;
 }
 
 function oscSetUp(){
