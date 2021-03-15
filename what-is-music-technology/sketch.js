@@ -13,20 +13,14 @@ let audioBtn;
 let submitBtn;
 let covidData;
 let allData;
+let visualisation;
 
 function preload(){
   loadJSON("https://pomber.github.io/covid19/timeseries.json", gotData); // loads official covid data of england
 }
 
 function gotData(data){
-  country = document.getElementById("country").value;
   allData = data;// this is how you access data which objects id contain spaces
-  covidData = data[country];
-
-  for (var day=1; day<covidData.length; day++){ // for loop to iterate across the whole data set
-    dailyCasesArray.push(dailyCases(day)); // add number each daily cases into array
-  }
-  maxCases = max(dailyCasesArray); // calculates the maximum of number of daily cases
 }
 
 function setup() {
@@ -39,9 +33,8 @@ function setup() {
   countryText = document.getElementById("country");
   cvnSonification = createCanvas(widthCanvas, heightCanvas);
 
-  background(240);
-  drawBackground();
   oscSetUp();
+  getherData();
 }
 
 function audioTgl(){
@@ -55,21 +48,27 @@ function audioTgl(){
 }
 
 function getherData(){
+  clearInterval(visualisation);
 
-  country = document.getElementById("country").value;
-  drawBackground();
+  country = document.getElementById("country").value.toString();
   
   covidData = allData[country];// this is how you access data which objects id contain spaces
-  
+
   // from line 20 till 24 is the code to extract the maximum number of cdaily covid cases
   for (var day=1; day<covidData.length; day++){ // for loop to iterate across the whole data set
     dailyCasesArray.push(dailyCases(day)); // add number each daily cases into array
   }
   maxCases = max(dailyCasesArray); // calculates the maximum of number of daily cases
+
+  console.log(country);
+
+  drawBackground();
+
   counter = 0;
+  visualisation = setInterval(drawData, 20);
 }
 
-function draw() {
+function drawData() {
   if(covidData){ // Cheks that the CovidData is filled.
 
     increment = deltaTime / 50; // delataTime is time difference between the beginning of the previous frame and the beginning of the current frame in milliseconds.
@@ -108,9 +107,7 @@ function draw() {
 
 
 function dailyCases(index){
-  if(covidData){ // Check if covidData is filled with data from the JSON file
-    return covidData[index].confirmed - covidData[index-1].confirmed; // extracts the number of daily cases. We calculated this in
-  }
+  return covidData[index].confirmed - covidData[index-1].confirmed; // extracts the number of daily cases. We calculated this in
 }
 
 function drawBackground(){
