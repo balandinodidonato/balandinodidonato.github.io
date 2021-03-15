@@ -7,7 +7,7 @@ var counter = 1;
 var dailyCasesArray = []; // array that will contain daily cases figures, per each day
 var maxCases;
 let buttonSonification;
-let country = "Italy";
+let country;
 let audioONOFF;
 let audioBtn;
 let submitBtn;
@@ -19,6 +19,7 @@ function preload(){
 }
 
 function gotData(data){
+  country = document.getElementById("country").value;
   allData = data;// this is how you access data which objects id contain spaces
   covidData = data[country];
 
