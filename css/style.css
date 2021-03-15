@@ -1206,6 +1206,10 @@ a:hover {
 
 /*------/ News Single /------*/
 
+.references p {
+  margin-bottom: 1.7rem;
+}
+
 .post-information {
   padding: 3rem 0;
 }
