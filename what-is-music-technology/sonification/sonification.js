@@ -23,7 +23,7 @@ function gotData(data){
 }
 
 function setup() {
-  const widthCanvas = windowWidth-10;
+  const widthCanvas = windowWidth*0.74;
   const heightCanvas = widthCanvas;
 
   audioBtn = document.getElementById("audio").addEventListener("click", audioTgl); 
