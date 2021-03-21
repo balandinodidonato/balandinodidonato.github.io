@@ -12,12 +12,13 @@ function setup() {
   const ratio = img.width/img.height;
   const widthCanvas = windowWidth;
   const heightCanvas = widthCanvas / ratio;
-  let cnv = createCanvas(widthCanvas, heightCanvas, WEBGL);
+  let cnv = createCanvas(widthCanvas, heightCanvas);
   
   
   imgBuffer = createGraphics(width*0.7, height*0.7);
   legendBuffer = createGraphics(width*0.14, height);
-  cnv.position((width-(legendBuffer.width+imgBuffer.width))/2);
+
+  cnv.position((width-(legendBuffer.width+imgBuffer.width))/2, 0);
 
   imgBuffer.image(img, 0, 0, imgBuffer.width, imgBuffer.height);
   
