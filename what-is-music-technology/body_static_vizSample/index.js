@@ -12,7 +12,7 @@ function setup() {
   const ratio = img.width/img.height;
   const widthCanvas = windowWidth;
   const heightCanvas = widthCanvas / ratio;
-  let cnv = createCanvas(widthCanvas, heightCanvas);
+  let cnv = createCanvas(widthCanvas, heightCanvas, WEBGL);
   
   
   imgBuffer = createGraphics(width*0.7, height*0.7);

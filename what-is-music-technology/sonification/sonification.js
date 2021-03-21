@@ -28,7 +28,7 @@ function setup() {
 
   audioBtn = document.getElementById("audio").addEventListener("click", audioTgl); 
   submitBtn = document.getElementById("submit").addEventListener("click", getherData); 
-  cvnSonification = createCanvas(widthCanvas, heightCanvas);
+  cvnSonification = createCanvas(widthCanvas, heightCanvas, WEBGL);
 
   oscSetUp();
   getherData();
