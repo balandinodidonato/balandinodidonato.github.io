@@ -25,7 +25,7 @@ function setup() {
 }
 
 function draw(){
-  background(30, 39, 49);
+  background(34, 44, 55);
   
   image(imgBuffer, legendBuffer.width, 0, imgBuffer.width, imgBuffer.height);
   image(legendBuffer, 0, 0, legendBuffer.width, legendBuffer.height);
