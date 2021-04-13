@@ -15,7 +15,7 @@ function setup() {
   let cnv = createCanvas(widthCanvas, heightCanvas);
   
   
-  imgBuffer = createGraphics(width*0.86, height*0.86);
+  imgBuffer = createGraphics(width*0.76, height*0.76);
   legendBuffer = createGraphics(width*0.14, height);
 
   cnv.position((width-(legendBuffer.width+imgBuffer.width))/2, 0);
@@ -25,7 +25,7 @@ function setup() {
 }
 
 function draw(){
-  background(255);
+  background(30, 39, 49);
   
   image(imgBuffer, legendBuffer.width, 0, imgBuffer.width, imgBuffer.height);
   image(legendBuffer, 0, 0, legendBuffer.width, legendBuffer.height);
@@ -63,7 +63,7 @@ function drawLegend(){
 
   for (let index = 0; index < keypointsName.length; index++) {
     // lables
-    legendBuffer.fill(0);
+    legendBuffer.fill(255);
     legendBuffer.noStroke();
     legendBuffer.textSize(tSize);
     legendBuffer.text(keypointsName[index], 5, (index*tHeightMargin)+tSize, tWidth, tSize);
