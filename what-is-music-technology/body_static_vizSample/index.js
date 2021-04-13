@@ -15,7 +15,7 @@ function setup() {
   let cnv = createCanvas(widthCanvas, heightCanvas);
   
   
-  imgBuffer = createGraphics(width*0.86, height*0.86);
+  imgBuffer = createGraphics(width*0.76, height*0.76);
   legendBuffer = createGraphics(width*0.14, height);
 
   cnv.position((width-(legendBuffer.width+imgBuffer.width))/2, 0);
