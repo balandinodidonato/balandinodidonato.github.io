@@ -1,0 +1,1764 @@
+
+<!-- saved from url=(0040)https://nemisindo.com/models/whoosh.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"><title>Whoosh</title>
+    <!-- Import custom JS file-->
+    <script src="./Whoosh_files/jsap.js"></script>
+    <script src="./Whoosh_files/utilities.js"></script>
+    <script src="./Whoosh_files/keyboardshortcuts.js"></script>
+    <!-- Import audio-fw JS files-->
+    <script src="./Whoosh_files/handlers.js"></script>
+    <script src="./Whoosh_files/helpers.js"></script>
+    <!-- Import UI JS files-->
+    <script src="./Whoosh_files/handlers(1).js"></script>
+    <script src="./Whoosh_files/helpers(1).js"></script>
+    <script src="./Whoosh_files/loaders.js"></script>
+    <script src="./Whoosh_files/recorder.js"></script><!-- JavaScript for Recorder-->
+    <script src="./Whoosh_files/NexusUI2.js"></script><!-- Import NexusUI 2.0 JS file-->
+    <script src="./Whoosh_files/jquery-3.1.1.min.js"></script><!-- Import jquery-->
+    <script src="./Whoosh_files/jquery-knob.js" charset="utf-8"></script><!-- Import jquery knob-->
+    <!-- Import Stripe-->
+    <script src="./Whoosh_files/polyfill.min.js"></script>
+    <script src="./Whoosh_files/saved_resource"></script>
+    <link rel="stylesheet" type="text/css" href="./Whoosh_files/styles-updated.css">
+    <link rel="stylesheet" type="text/css" href="./Whoosh_files/popup.css">
+    <link href="./Whoosh_files/css" rel="stylesheet">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="" src="./Whoosh_files/js"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-GWYYGCCE1J');
+    </script>
+<script src="./Whoosh_files/WhooshPlugin.js"></script><script src="./Whoosh_files/OverdrivePlugin.js"></script><script src="./Whoosh_files/DelayPlugin.js"></script><script src="./Whoosh_files/ConvolutionReverbPlugin.js"></script><script src="./Whoosh_files/CompressorPlugin.js"></script><script src="./Whoosh_files/EQPlugin.js"></script><script src="./Whoosh_files/SpatialisationPlugin.js"></script><script src="./Whoosh_files/MasterPlugin.js"></script></head>
+<body data-new-gr-c-s-check-loaded="14.1045.0" data-gr-ext-installed=""><header class="myHeader"><script src="./Whoosh_files/GLOBAL.js"></script>
+
+<link rel="stylesheet" type="text/css" href="./Whoosh_files/header.css">
+
+<header class="myHeader">
+    <div class="corner-logo">
+        <img class="logo" src="./Whoosh_files/nemisindo_square.png" style="height: 50px; cursor: pointer;" onclick="location.href=&#39;../index.html&#39;;">
+    </div>
+
+    <div class="header-menu">
+        <div class="header-button" onclick="location.href=&#39;../app/models-page.html&#39;;">Models
+        </div>
+        <div class="header-button" onclick="location.href=&#39;../app/presets-page.html&#39;;">Presets</div>
+        <div class="header-button" onclick="location.href=&#39;../app/products-page.html&#39;;">Products
+        </div>
+        <div class="header-button" onclick="location.href=&#39;../app/help-page.html&#39;;">Help</div>
+        <div class="header-button" onclick="location.href=&#39;../app/about-page.html&#39;;">About</div>
+        <div class="header-button" onclick="location.href=&#39;../app/blog-page.html&#39;;">Blog</div>
+    </div>
+    <div class="user-icon-container" onclick="location.href=`${BACKEND}/profile`;">
+        <svg class="user-icon" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+            <path style="fill: white;" d="M2.5 14.5h11v-.28c0-.99-.53-1.91-1.42-2.32A8.75 8.75   
+                    0 0 0 8 11.03c-1.74 0-2.83.29-4.08.87a2.53 2.53 0 0 0-1.42 2.32v.28zM1 14.24a4 4 0 0 1  
+                    2.17-3.7A10.6 10.6 0 0 1 8 9.54c1.98 0 3.38.34 4.83 1.02A4 4 0 0 1 15 14.24V16H1v-1.76zM8   
+                    7.2c.74 0 2-1 2-2.71 0-2.2-.62-3-2-3s-2.2.8-2.2 3c0 1.7 1.46 2.7 2.2 2.7zm0 1.5c-1.53   
+                    0-3.7-1.58-3.7-4.21S5.44 0 8 0c2.56 0 3.5 1.87 3.5 4.5S9.53 8.7 8 8.7z"></path>
+        </svg>
+    </div>
+</header>
+</header><div class="wrapper">
+<sb-left><l-top>
+    <div class="tools-title">
+        <h3>Tools</h3>
+        <img src="./Whoosh_files/help.png" onclick="popupTools()" style="width:30px;height:30px;background-color: #07889B; border-radius: 5px; position:absolute; top:1vh; right: 1vh; z-index: 5; cursor: pointer;">
+    </div>
+    <div class="popup-tool" id="popupTools" style="height:0%;padding-top:0px;">
+        <p>
+            "Random" lets you randomise the parameters of the model. "Trigger"
+            is used for triggering sounds or events in a custom pattern.
+            "Spatialisation" lets you place the sound within a virtual space to
+            achieve a 3D effect. Check our help page for more info.
+        </p>
+    </div>
+    <script>
+        function popupTools() {
+            var popup = document.getElementById("popupTools");
+            if (popup.style.height == "0%"){
+                popup.style.height = "100%";
+                popup.style.paddingTop = "20px";
+            } else {
+                popup.style.height = "0%";
+                popup.style.paddingTop = "0px";
+            }
+        }
+    </script>
+    <div class="random">
+        <div id="randButton" onmouseover="toolsdisplayInfo(this);" onmouseout="hideInfo()" nexus-ui="" style="width: 120px; height: 35px;"><div style="border-radius: 10px; background-color: rgb(51, 58, 86); color: rgb(255, 255, 255); cursor: pointer;"><div style="border-radius: 10px; width: 120px; height: 35px; box-sizing: border-box; display: table-cell; vertical-align: middle; text-align: center; font-family: &quot;Work Sans&quot;, sans-serif; font-weight: 500; opacity: 1; font-size: 16px; color: rgb(255, 255, 255);">Random</div></div></div>
+    </div>
+    <div class="random-sc">
+        <div id="randButton-sc" onmouseover="toolsdisplayInfo(this);" onmouseout="hideInfo()" nexus-ui="" style="width: 45px; height: 45px;">
+            <img src="./Whoosh_files/randomise.png" style="width:35px;height:35px;position:absolute;pointer-events: none;">
+        <svg width="45" height="45" style="cursor: pointer;"><circle cx="22.5" cy="22.5" r="21.375" fill="#59C9A5"></circle><defs><radialgradient id="gradient53411834029" cx="50%" cy="50%" r="50%"><stop id="stop0" offset="30%" stop-color="#CDCDCD"></stop><stop id="stop1" offset="100%" stop-color="#59C9A5"></stop></radialgradient></defs></svg></div>
+    </div>
+    <div class="trigger">
+        <div id="trigButton" onmouseover="toolsdisplayInfo(this);" onmouseout="hideInfo()" nexus-ui="" style="width: 120px; height: 35px;"><div style="border-radius: 10px; background-color: rgb(51, 58, 86); color: rgb(255, 255, 255); cursor: pointer;"><div style="border-radius: 10px; width: 120px; height: 35px; box-sizing: border-box; display: table-cell; vertical-align: middle; text-align: center; font-family: &quot;Work Sans&quot;, sans-serif; font-weight: 500; opacity: 1; font-size: 16px; color: rgb(255, 255, 255);">Trigger</div></div></div>
+    </div>
+    <div class="trigger-sc">
+        <div id="trigButton-sc" onmouseover="toolsdisplayInfo(this);" onmouseout="hideInfo()" nexus-ui="" style="width: 45px; height: 45px;">
+            <img src="./Whoosh_files/trigger.png" style="width:35px;height:35px;position:absolute;pointer-events: none;">
+        <svg width="45" height="45" style="cursor: pointer;"><circle cx="22.5" cy="22.5" r="21.375" fill="#59C9A5"></circle><defs><radialgradient id="gradient66099090272" cx="50%" cy="50%" r="50%"><stop id="stop0" offset="30%" stop-color="#CDCDCD"></stop><stop id="stop1" offset="100%" stop-color="#59C9A5"></stop></radialgradient></defs></svg></div>
+    </div>
+    <div class="spatialisation">
+        <div id="spatButton" onmouseover="toolsdisplayInfo(this);" onmouseout="hideInfo()" nexus-ui="" style="width: 120px; height: 35px;"><div style="border-radius: 10px; background-color: rgb(51, 58, 86); color: rgb(255, 255, 255); cursor: pointer;"><div style="border-radius: 10px; width: 120px; height: 35px; box-sizing: border-box; display: table-cell; vertical-align: middle; text-align: center; font-family: &quot;Work Sans&quot;, sans-serif; font-weight: 500; opacity: 1; font-size: 16px; color: rgb(255, 255, 255);">Spatialisation</div></div></div>
+    </div>
+    <div class="spatialisation-bypass">
+        <div id="spatBypass" onmouseover="toolsdisplayInfo(this);" onmouseout="hideInfo()" style="width: 50px; height: 25px; position: absolute; left: 190px; top: 165px;" nexus-ui=""><svg width="50" height="25" style="cursor: pointer;"><rect x="6.25" y="6.25" rx="6.25" ry="6.25" width="37.5" height="12.5" fill="#367C66"></rect><circle cx="12.5" cy="12.5" r="12.5" fill="#59C9A5"></circle></svg></div>
+    </div>
+</l-top>
+<l-bottom>
+    <div class="preset-title"><h3>Presets</h3></div>
+    <div class="preset-dropdown">
+        <div id="presetSelect" onmouseover="toolsdisplayInfo(this);" onmouseout="hideInfo()" nexus-ui="" style="width: 130px; height: 35px;"><select style="font-size: 17.5px; outline: none; width: 130px; height: 35px; background-color: rgb(51, 58, 86); color: rgb(255, 255, 255); border: 0px solid rgb(204, 204, 204); cursor: pointer;"><option value="0">--</option><option value="1">Sci-fi Slow</option><option value="2">Passing Car</option><option value="3">Spray</option><option value="4">Fast Whoosh Effect</option><option value="5">Wind Puff</option><option value="6">Firework Taking Off</option></select></div>
+    </div>
+    <div class="preset-button">
+        <div id="presetButton" onmouseover="toolsdisplayInfo(this);" onmouseout="hideInfo()" nexus-ui="" style="width: 120px; height: 35px;"><div style="border-radius: 10px; background-color: rgb(51, 58, 86); color: rgb(255, 255, 255); cursor: pointer;"><div style="border-radius: 10px; width: 120px; height: 35px; box-sizing: border-box; display: table-cell; vertical-align: middle; text-align: center; font-family: &quot;Work Sans&quot;, sans-serif; font-weight: 500; opacity: 1; font-size: 16px; color: rgb(255, 255, 255);">Save Preset</div></div></div>
+    </div>
+    <div class="lb-title"><h3>Record</h3></div>
+    <div class="rec-light">
+        <div class="rec-button" style="align-content: center">
+            <div id="recordOn" onmouseover="toolsdisplayInfo(this);" onmouseout="hideInfo()" nexus-ui="" style="width: 55px; height: 55px;"><svg width="55" height="55" style="cursor: pointer;"><circle cx="27.5" cy="27.5" r="26.125" fill="#59C9A5"></circle><defs><radialgradient id="gradient69770787630" cx="50%" cy="50%" r="50%"><stop id="stop0" offset="30%" stop-color="#CDCDCD"></stop><stop id="stop1" offset="100%" stop-color="#59C9A5"></stop></radialgradient></defs></svg></div>
+        </div>
+        <div id="counter"></div>
+    </div>
+    <div class="down-title"><h3>Download</h3></div>
+    <div class="down-links-parent">
+        <div class="checkout-error" style="display: none;">
+            <p id="checkout-error-text"></p>
+            <button type="button" class="checkout-login-button" id="login-button">Login</button>
+        </div>
+        <div class="checkout">
+            <button type="button" class="checkout-login-button" id="checkout-button" style="display: none;">
+                <span class="button__text">Checkout</span>
+            </button>
+        </div>
+        <div class="down-audio-files">
+            <div class="down-links">
+                <div class="roboto" style="list-style: none;" id="recList"></div>
+            </div>
+            <div class="delete-links">
+                <div style="list-style: none;" id="delList"></div>
+            </div>
+        </div>
+    </div>
+    <div class="info-title"><h3>info</h3></div>
+    <div class="info-box-container">
+        <div class="info-text" id="info-text"></div>
+    </div>
+</l-bottom>
+<script>
+    $("html").on("contextmenu",function(e){
+        return false;
+    });
+    Nexus.colors.accent = "#CDCDCD", Nexus.colors.fill = "#333A56", Nexus.colors.dark = "#FFFFFF";
+    const para = document.getElementById('checkout-error-text');
+    const paraBox = document.getElementById("checkout-error-message");
+    async function getData(url) {
+        const response = await fetch(url, {
+            credentials: 'include',
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+        // return response.json();
+        return response;
+    }
+    var recordOn = new Nexus.Button('#recordOn', {
+        'size': [55, 55],
+        'mode': 'toggle',
+        'state': false
+    })
+    recordOn.colorize('fill', "#59C9A5");
+    recordOn.colors.accent = "#FB4D3D";
+
+    var state = false;
+    $('.checkout-error').hide();
+    $('#checkout-button').hide();
+    recordOn.on('change', function(data) {
+        getData(`${BACKEND}/recording/check-logged-in`).then(res => {
+            console.log("RES JSON", res)
+            if (!res.redirected) {
+                state = !state;
+                if (state && recordOn.state) {
+                    startRecording(chainStop);
+                    var tt=setInterval(function(){
+                        startTime()
+                    },1000);
+                    var counter = 0;
+                    var maxCounter = 60;
+                    function startTime()
+                    {
+                        if(counter == maxCounter) {
+                            clearInterval(tt);
+                            recordOn.state = false;
+                            console.log('Max timer reached');
+                        } else if (recordOn.state) {
+                            counter++;
+                        } else if (!recordOn.state) {
+                            clearInterval(tt);
+                        }
+                        var time = maxCounter - counter;
+                        document.getElementById('counter').innerHTML = time;
+                    }
+                } else {
+                    stopRecording()
+                    $('#checkout-button').show();
+                }
+            } else if (res.redirected) {
+                state = !state;
+                $('.checkout-error').show();
+                $('#checkout-button').hide();
+                para.textContent = "You need to log in first!";
+            }
+        }).catch((error) => {
+            console.log("error: ", error);
+            para.textContent = "Error authenticating user, please try again";
+        });
+    })
+    var presetSelect = new Nexus.Select('#presetSelect', {
+        'size': [130, 35],
+        'options': ['--']
+    })
+    var presetButton = new Nexus.TextButton('#presetButton', {
+        'size': [120, 35],
+        'state': false,
+        'text': 'Save Preset',
+        'alternate': false
+    })
+    presetButton.textElement.style.fontSize = "16px";
+    presetButton.textElement.style.fontFamily = "'Work Sans', sans-serif";
+    presetButton.on('change', function(data) {
+        if (data) {
+            addPreset(updateParametersObjectState(parametersObject, Factory), "newPreset");
+            var newPreset = getPreset(presets, "newPreset");
+            setPresetAsURL(newPreset);
+        };
+    });
+    var randButton = new Nexus.TextButton('#randButton', {
+        'size': [120, 35],
+        'state': false,
+        'text': 'Random',
+        'alternate': false
+    })
+    randButton.textElement.style.fontSize = "16px";
+    randButton.textElement.style.fontFamily = "'Work Sans', sans-serif";
+    var randButtonSc = new Nexus.Button('#randButton-sc', {
+        'size': [45, 45],
+        'mode': 'impulse',
+        'state': false
+    })
+    randButtonSc.colorize('fill', "#59C9A5");
+    randButtonSc.colors.accent = "#AED9E0";
+    randButtonSc.on('change', function(v) {
+        if (v) buttonRandomise.click();
+    }) // v is the value of the button
+    var trigButton = new Nexus.TextButton('#trigButton', {
+        'size': [120, 35],
+        'state': false,
+        'text': 'Trigger',
+        'alternate': false
+    })
+    trigButton.textElement.style.fontSize = "16px";
+    trigButton.textElement.style.fontFamily = "'Work Sans', sans-serif";
+    var trigButtonSc = new Nexus.Button('#trigButton-sc', {
+        'size': [45, 45],
+        'mode': 'aftertouch',
+    })
+    trigButtonSc.colorize('fill', "#59C9A5");
+    trigButtonSc.colors.accent = "#AED9E0";
+    flg = false;
+    trigButtonSc.on('change', function(v) {
+        if (!trigButtonSc.state) {
+            flg = false;
+            trigger.turnOff();
+        }
+        if (trigButtonSc.state) {
+            if (!flg) {
+                flg = true;
+                trigger.turnOn();
+            }
+        }
+    }) // v is the value of the button
+    var spatButton = new Nexus.TextButton('#spatButton', {
+        'size': [120, 35],
+        'state': false,
+        'text': 'Spatialisation',
+        'alternate': false
+    })
+    spatButton.textElement.style.fontSize = "16px";
+    spatButton.textElement.style.fontFamily = "'Work Sans', sans-serif";
+
+    var spatBypass = new Nexus.Toggle('#spatBypass', {
+        'size': [50, 25],
+        'state': false
+    })
+    spatBypass.colorize('fill', "#367C66");
+    spatBypass.colorize('accent', "#59C9A5");
+    var spatSwitch = new Nexus.Toggle('#spatSwitch', {
+        'size': [40, 20],
+        'state': false
+    })
+    spatSwitch.colorize('fill', "#367C66");
+    spatSwitch.colorize('accent', "#59C9A5");
+    spatSwitch.on('change', function(v) {
+        if (spatSwitch.state != spatBypass.state) spatBypass.click();
+    })
+    spatBypass.on('change', function(v) {
+          if (spatBypass.state != spatSwitch.state) spatSwitch.click();
+    })
+
+    var toolsModal = document.getElementById('tlsModal'); // Get the modal
+    // Get the button that opens the modal
+    var randBtn = document.getElementById("randButton");
+    var trigBtn = document.getElementById("trigButton");
+    var spatBtn = document.getElementById("spatButton");
+    var span = document.getElementById("tlsClose"); // Get the <span> element that closes the modal
+    // When the user clicks on the button, open the modal
+    randBtn.onclick = function() {
+        toolsModal.style.display = "block";
+        document.getElementById("random-focus").focus();
+        toolsTab(event, 'randomisation-content')
+    }
+    trigBtn.onclick = function() {
+        toolsModal.style.display = "block";
+        document.getElementById("trigger-focus").focus();
+        toolsTab(event, 'trigger-content')
+    }
+    spatBtn.onclick = function() {
+        toolsModal.style.display = "block";
+        document.getElementById("spatialisation-focus").focus();
+        toolsTab(event, 'spatialisation-content')
+    }
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+        toolsModal.style.display = "none";
+    }
+
+    function toolsTab(evt, effect) {
+        var i, x, tablinks;
+        x = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < x.length; i++) x[i].style.display = "none";
+        tablinks = document.getElementsByClassName("tablink");
+        document.getElementById(effect).style.display = "block";
+    }
+
+    const rList = document.getElementById("recList");
+    async function postRec(url, data) {
+        const response = await fetch(url, {
+            credentials: 'include',
+            method: 'POST',
+            headers: {
+                'enctype': 'multipart/form-data'
+            },
+            body: data
+        });
+    }
+    async function postCheck(url, data) {
+        const response = await fetch(url, {
+            credentials: 'include',
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify({
+                fileNames: data.fileNames,
+                modelName: data.modelName,
+                numberOfRecs: data.numberOfRecs
+            })
+        });
+        return response;
+    }
+    let promises = [];
+    let fileNames = [];
+    let modelName = document.getElementById("titleHeader").innerHTML;
+    async function postRecordings(numberOfRecs) {
+        for (let i=0; i < numberOfRecs; i++) {
+            let audioElement = rList.children[i];
+            let blobURL = audioElement.firstElementChild.src;
+            let blob = await fetch(blobURL).then(r => r.blob());
+            fileNames.push(audioElement.childNodes[1].download);
+            let formData = new FormData();
+            formData.append('blobFile', blob);
+            formData.append('fileName', String(fileNames[i]));
+            promises.push(new Promise ((resolve, reject) => {
+                postRec(`${BACKEND}/recording/upload`, formData)
+                .then(() => {
+                    resolve()
+                });
+            }));
+        }
+        return Promise.all(promises)
+    }
+    async function handelSubmit() {
+        checkoutBtn.classList.toggle("button--loading");
+        let numberOfRecs = rList.children.length;
+        postRecordings(numberOfRecs)
+        .then(() => {
+            // var stripe = Stripe("pk_test_51J00ZQLH7kTUFDzlaOGLf3zOANos1Vvl8qTtD05oa5JkkqoaS70YvKVcJqgMTLGB8Xgzs3VQ3AjDbVD2r92ZfIoa00Kehxttfv");
+
+            postCheck(`${BACKEND}/recording/create-checkout-session`,
+            { "fileNames": fileNames,
+            "modelName": modelName,
+            "numberOfRecs": numberOfRecs })
+            // .then(response => {
+                // return response.json();
+            // }).then(session => {
+            //     return stripe.redirectToCheckout({
+            //         sessionId: session.id
+            //     });
+            // })
+            .then((response) => {
+                var arr = fileNames.map(encodeURIComponent)
+                const fileNamesString = 'fileNamesString' + '[]=' + arr.join('&' + 'fileNamesString' + '[]=');
+
+                url = `${BACKEND}/success-page?${fileNamesString}&modelName=${modelName}&numberOfRecs=${numberOfRecs}&price=${0.00}`;
+                window.location.href = url;
+            }).catch(error => {
+                console.error("Error:", error);
+                para.textContent = "The file upload was unsucessful, please try again later";
+            });
+
+        }).catch((error) => {
+            para.textContent = "The file upload was unsucessful, please try again later";
+        });
+    }
+    const checkoutBtn = document.getElementById("checkout-button");
+    checkoutBtn.addEventListener("click", handelSubmit);
+    const loginBtn = document.getElementById("login-button");
+    loginBtn.addEventListener("click", function() {
+        window.location.href = `${BACKEND}/login-page`;
+    });
+</script>
+</sb-left>
+  <main>
+    <div class="synth-title"><h2 id="titleHeader">Whoosh</h2></div>
+    <div class="synth-top">
+        <div class="synth-button"><div class="center" id="gateButtonNexus" nexus-ui="" style="width: 50px; height: 35px;"><div style="border-radius: 10px; background-color: rgb(255, 87, 51); color: rgb(255, 255, 255); cursor: pointer;"><div style="border-radius: 10px; width: 50px; height: 35px; box-sizing: border-box; display: table-cell; vertical-align: middle; text-align: center; font-family: inherit; font-weight: 500; opacity: 1; font-size: 16px; color: rgb(255, 255, 255);">&#9654;</div></div></div></div>
+    </div>
+    <div class="synth-left">
+      <div class="synth-label"><label class="controlLabel" for="gainInputNexus">Noise Gain</label></div>
+      <div class="synth-slider"><div id="gainInputNexus" nexus-ui="" style="width: 150px; height: 20px;"><svg width="150" height="20" style="cursor: pointer;"><rect x="0" y="10" transform="translate(0,-5)" rx="5" ry="5" width="150" height="10" fill="#99CED4"></rect><rect x="0" y="10" width="137.91" height="10" transform="translate(0,-5)" rx="5" ry="5" fill="#4A8DAC"></rect><circle cx="137.91" cy="10" r="7.5" fill="#4A8DAC"></circle></svg></div></div>
+      <div class="synth-number"><span id="gainInputDisp" nexus-ui="" style="width: 40px; height: 22px;"><input type="text" style="width: 40px; height: 22px; background-color: rgb(153, 206, 212); color: rgb(255, 255, 255); font-family: arial; font-weight: 500; font-size: 11px; border: none; outline: none; padding: 5.5px; box-sizing: border-box; cursor: pointer;"></span></div>
+      <div class="synth-label"><label class="controlLabel" for="gainAttackInputNexus">Gain Attack</label></div>
+      <div class="synth-select"><div id="gainAttackTypeNexus" nexus-ui="" style="width: 125px; height: 30px;"><select style="font-size: 15px; outline: none; width: 125px; height: 30px; background-color: rgb(153, 206, 212); color: rgb(255, 255, 255); border: 0px solid rgb(204, 204, 204); cursor: pointer;"><option value="0">Linear</option><option value="1">Exponential</option></select></div></div>
+      <div class="synth-slider"><div id="gainAttackInputNexus" nexus-ui="" style="width: 150px; height: 20px;"><svg width="150" height="20" style="cursor: pointer;"><rect x="0" y="10" transform="translate(0,-5)" rx="5" ry="5" width="150" height="10" fill="#99CED4"></rect><rect x="0" y="10" width="83.91000000000001" height="10" transform="translate(0,-5)" rx="5" ry="5" fill="#4A8DAC"></rect><circle cx="83.91000000000001" cy="10" r="7.5" fill="#4A8DAC"></circle></svg></div></div>
+      <div class="synth-number"><span id="gainAttackDisp" nexus-ui="" style="width: 40px; height: 22px;"><input type="text" style="width: 40px; height: 22px; background-color: rgb(153, 206, 212); color: rgb(255, 255, 255); font-family: arial; font-weight: 500; font-size: 11px; border: none; outline: none; padding: 5.5px; box-sizing: border-box; cursor: pointer;"></span></div>
+      <div class="synth-label"><label class="controlLabel" for="gainReleaseInputNexus">Gain Release</label></div>
+      <div class="synth-select"><div id="gainReleaseTypeNexus" nexus-ui="" style="width: 125px; height: 30px;"><select style="font-size: 15px; outline: none; width: 125px; height: 30px; background-color: rgb(153, 206, 212); color: rgb(255, 255, 255); border: 0px solid rgb(204, 204, 204); cursor: pointer;"><option value="0">Linear</option><option value="1">Exponential</option></select></div></div>
+      <div class="synth-slider"><div id="gainReleaseInputNexus" nexus-ui="" style="width: 150px; height: 20px;"><svg width="150" height="20" style="cursor: pointer;"><rect x="0" y="10" transform="translate(0,-5)" rx="5" ry="5" width="150" height="10" fill="#99CED4"></rect><rect x="0" y="10" width="29.4375" height="10" transform="translate(0,-5)" rx="5" ry="5" fill="#4A8DAC"></rect><circle cx="29.4375" cy="10" r="7.5" fill="#4A8DAC"></circle></svg></div></div>
+      <div class="synth-number"><span id="gainReleaseDisp" nexus-ui="" style="width: 40px; height: 22px;"><input type="text" style="width: 40px; height: 22px; background-color: rgb(153, 206, 212); color: rgb(255, 255, 255); font-family: arial; font-weight: 500; font-size: 11px; border: none; outline: none; padding: 5.5px; box-sizing: border-box; cursor: pointer;"></span></div>
+    </div>
+    <div class="synth-center">
+      <div class="synth-label"><label class="controlLabel" for="startFilterFreqInputNexus">Start Frequency</label></div>
+      <div class="synth-slider"><div id="startFilterFreqInputNexus" nexus-ui="" style="width: 150px; height: 20px;"><svg width="150" height="20" style="cursor: pointer;"><rect x="0" y="10" transform="translate(0,-5)" rx="5" ry="5" width="150" height="10" fill="#99CED4"></rect><rect x="0" y="10" width="11.970370812182741" height="10" transform="translate(0,-5)" rx="5" ry="5" fill="#4A8DAC"></rect><circle cx="11.970370812182741" cy="10" r="7.5" fill="#4A8DAC"></circle></svg></div></div>
+      <div class="synth-number"><span id="startFilterFreqDisp" nexus-ui="" style="width: 40px; height: 22px;"><input type="text" style="width: 40px; height: 22px; background-color: rgb(153, 206, 212); color: rgb(255, 255, 255); font-family: arial; font-weight: 500; font-size: 11px; border: none; outline: none; padding: 5.5px; box-sizing: border-box; cursor: pointer;"></span></div>
+      <div class="synth-label"><label class="controlLabel" for="peakFilterFreqInputNexus">Peak Frequency</label></div>
+      <div class="synth-slider"><div id="peakFilterFreqInputNexus" nexus-ui="" style="width: 150px; height: 20px;"><svg width="150" height="20" style="cursor: pointer;"><rect x="0" y="10" transform="translate(0,-5)" rx="5" ry="5" width="150" height="10" fill="#99CED4"></rect><rect x="0" y="10" width="13.432263197969544" height="10" transform="translate(0,-5)" rx="5" ry="5" fill="#4A8DAC"></rect><circle cx="13.432263197969544" cy="10" r="7.5" fill="#4A8DAC"></circle></svg></div></div>
+      <div class="synth-number"><span id="peakFilterFreqDisp" nexus-ui="" style="width: 40px; height: 22px;"><input type="text" style="width: 40px; height: 22px; background-color: rgb(153, 206, 212); color: rgb(255, 255, 255); font-family: arial; font-weight: 500; font-size: 11px; border: none; outline: none; padding: 5.5px; box-sizing: border-box; cursor: pointer;"></span></div>
+      <div class="synth-label"><label class="controlLabel" for="endFilterFreqInputNexus">End Frequency</label></div>
+      <div class="synth-slider"><div id="endFilterFreqInputNexus" nexus-ui="" style="width: 150px; height: 20px;"><svg width="150" height="20" style="cursor: pointer;"><rect x="0" y="10" transform="translate(0,-5)" rx="5" ry="5" width="150" height="10" fill="#99CED4"></rect><rect x="0" y="10" width="10.029125634517767" height="10" transform="translate(0,-5)" rx="5" ry="5" fill="#4A8DAC"></rect><circle cx="10.029125634517767" cy="10" r="7.5" fill="#4A8DAC"></circle></svg></div></div>
+      <div class="synth-number"><span id="endFilterFreqDisp" nexus-ui="" style="width: 40px; height: 22px;"><input type="text" style="width: 40px; height: 22px; background-color: rgb(153, 206, 212); color: rgb(255, 255, 255); font-family: arial; font-weight: 500; font-size: 11px; border: none; outline: none; padding: 5.5px; box-sizing: border-box; cursor: pointer;"></span></div>
+      <div class="synth-label"><label class="controlLabel" for="filterQInputNexus">Filter Q</label></div>
+      <div class="synth-slider"><div id="filterQInputNexus" nexus-ui="" style="width: 150px; height: 20px;"><svg width="150" height="20" style="cursor: pointer;"><rect x="0" y="10" transform="translate(0,-5)" rx="5" ry="5" width="150" height="10" fill="#99CED4"></rect><rect x="0" y="10" width="15.228750000000002" height="10" transform="translate(0,-5)" rx="5" ry="5" fill="#4A8DAC"></rect><circle cx="15.228750000000002" cy="10" r="7.5" fill="#4A8DAC"></circle></svg></div></div>
+      <div class="synth-number"><span id="filterQDisp" nexus-ui="" style="width: 40px; height: 22px;"><input type="text" style="width: 40px; height: 22px; background-color: rgb(153, 206, 212); color: rgb(255, 255, 255); font-family: arial; font-weight: 500; font-size: 11px; border: none; outline: none; padding: 5.5px; box-sizing: border-box; cursor: pointer;"></span></div>
+    </div>
+    <div class="synth-right">
+      <div class="synth-label"><label class="controlLabel" for="gainAttackInputNexus">Frequency Attack</label></div>
+      <div class="synth-select"><div id="freqAttackTypeNexus" nexus-ui="" style="width: 125px; height: 30px;"><select style="font-size: 15px; outline: none; width: 125px; height: 30px; background-color: rgb(153, 206, 212); color: rgb(255, 255, 255); border: 0px solid rgb(204, 204, 204); cursor: pointer;"><option value="0">Linear</option><option value="1">Exponential</option></select></div></div>
+      <div class="synth-slider"><div id="freqAttackInputNexus" nexus-ui="" style="width: 150px; height: 20px;"><svg width="150" height="20" style="cursor: pointer;"><rect x="0" y="10" transform="translate(0,-5)" rx="5" ry="5" width="150" height="10" fill="#99CED4"></rect><rect x="0" y="10" width="27.75" height="10" transform="translate(0,-5)" rx="5" ry="5" fill="#4A8DAC"></rect><circle cx="27.75" cy="10" r="7.5" fill="#4A8DAC"></circle></svg></div></div>
+      <div class="synth-number"><span id="freqAttackDisp" nexus-ui="" style="width: 40px; height: 22px;"><input type="text" style="width: 40px; height: 22px; background-color: rgb(153, 206, 212); color: rgb(255, 255, 255); font-family: arial; font-weight: 500; font-size: 11px; border: none; outline: none; padding: 5.5px; box-sizing: border-box; cursor: pointer;"></span></div>
+      <div class="synth-label"><label class="controlLabel" for="freqReleaseInputNexus">Frequency Release</label></div>
+      <div class="synth-select"><div id="freqReleaseTypeNexus" nexus-ui="" style="width: 125px; height: 30px;"><select style="font-size: 15px; outline: none; width: 125px; height: 30px; background-color: rgb(153, 206, 212); color: rgb(255, 255, 255); border: 0px solid rgb(204, 204, 204); cursor: pointer;"><option value="0">Linear</option><option value="1">Exponential</option></select></div></div>
+      <div class="synth-slider"><div id="freqReleaseInputNexus" nexus-ui="" style="width: 150px; height: 20px;"><svg width="150" height="20" style="cursor: pointer;"><rect x="0" y="10" transform="translate(0,-5)" rx="5" ry="5" width="150" height="10" fill="#99CED4"></rect><rect x="0" y="10" width="28.2225" height="10" transform="translate(0,-5)" rx="5" ry="5" fill="#4A8DAC"></rect><circle cx="28.2225" cy="10" r="7.5" fill="#4A8DAC"></circle></svg></div></div>
+      <div class="synth-number"><span id="freqReleaseDisp" nexus-ui="" style="width: 40px; height: 22px;"><input type="text" style="width: 40px; height: 22px; background-color: rgb(153, 206, 212); color: rgb(255, 255, 255); font-family: arial; font-weight: 500; font-size: 11px; border: none; outline: none; padding: 5.5px; box-sizing: border-box; cursor: pointer;"></span></div>
+      <div class="synth-label"><label class="controlLabel" for="filterTypeNexus">Filter Type</label></div>
+      <div class="synth-select"><div id="filterTypeNexus" nexus-ui="" style="width: 125px; height: 30px;"><select style="font-size: 15px; outline: none; width: 125px; height: 30px; background-color: rgb(153, 206, 212); color: rgb(255, 255, 255); border: 0px solid rgb(204, 204, 204); cursor: pointer;"><option value="0">Low Pass</option><option value="1">Band Pass</option></select></div></div>
+    </div>
+    <div class="synth-bottom"></div>
+    </main>
+    <sb-right><r-top>
+    <div class="fx-title">
+        <h3>Effects</h3>
+        <img src="./Whoosh_files/help.png" onclick="popupEffects()" style="width:30px;height:30px;background-color: #07889B; border-radius: 5px; position:absolute; top:1vh; right: 1vh; z-index: 5; cursor: pointer;">
+    </div>
+    <div class="popup-effect" id="popupEffects" style="height:0%;padding-top:0px;">
+        <p>
+        Use the text buttons to access the settings for each post-processing effect.
+        The toggle switches next to each effect may be used to turn them on &amp; off.
+        Check our help page for more details on each processor.
+        </p>
+    </div>
+    <script>
+        function popupEffects() {
+            var popup = document.getElementById("popupEffects");
+            if (popup.style.height == "0%"){
+                popup.style.height = "100%";
+                popup.style.paddingTop = "20px";
+            } else {
+                popup.style.height = "0%";
+                popup.style.paddingTop = "0px";
+            }
+        }
+    </script>
+    <div class="eq-button">
+        <div id="eqButton" onmouseover="toolsdisplayInfo(this);" onmouseout="hideInfo()" nexus-ui="" style="width: 120px; height: 35px;"><div style="border-radius: 10px; background-color: rgb(51, 58, 86); color: rgb(255, 255, 255); cursor: pointer;"><div style="border-radius: 10px; width: 120px; height: 35px; box-sizing: border-box; display: table-cell; vertical-align: middle; text-align: center; font-family: &quot;Work Sans&quot;, sans-serif; font-weight: 500; opacity: 1; font-size: 16px; color: rgb(255, 255, 255);">EQ</div></div></div>
+    </div>
+    <div class="eq-bypass">
+        <div id="eqBypass" onmouseover="toolsdisplayInfo(this);" onmouseout="hideInfo()" nexus-ui="" style="width: 50px; height: 25px;"><svg width="50" height="25" style="cursor: pointer;"><rect x="6.25" y="6.25" rx="6.25" ry="6.25" width="37.5" height="12.5" fill="#367C66"></rect><circle cx="12.5" cy="12.5" r="12.5" fill="#59C9A5"></circle></svg></div>
+    </div>
+    <div class="rev-button">
+        <div id="revButton" onmouseover="toolsdisplayInfo(this);" onmouseout="hideInfo()" nexus-ui="" style="width: 120px; height: 35px;"><div style="border-radius: 10px; background-color: rgb(51, 58, 86); color: rgb(255, 255, 255); cursor: pointer;"><div style="border-radius: 10px; width: 120px; height: 35px; box-sizing: border-box; display: table-cell; vertical-align: middle; text-align: center; font-family: &quot;Work Sans&quot;, sans-serif; font-weight: 500; opacity: 1; font-size: 16px; color: rgb(255, 255, 255);">Reverb</div></div></div>
+    </div>
+    <div class="rev-bypass">
+        <div id="revBypass" onmouseover="toolsdisplayInfo(this);" onmouseout="hideInfo()" nexus-ui="" style="width: 50px; height: 25px;"><svg width="50" height="25" style="cursor: pointer;"><rect x="6.25" y="6.25" rx="6.25" ry="6.25" width="37.5" height="12.5" fill="#367C66"></rect><circle cx="12.5" cy="12.5" r="12.5" fill="#59C9A5"></circle></svg></div>
+    </div>
+    <div class="del-button">
+        <div id="delButton" onmouseover="toolsdisplayInfo(this);" onmouseout="hideInfo()" nexus-ui="" style="width: 120px; height: 35px;"><div style="border-radius: 10px; background-color: rgb(51, 58, 86); color: rgb(255, 255, 255); cursor: pointer;"><div style="border-radius: 10px; width: 120px; height: 35px; box-sizing: border-box; display: table-cell; vertical-align: middle; text-align: center; font-family: &quot;Work Sans&quot;, sans-serif; font-weight: 500; opacity: 1; font-size: 16px; color: rgb(255, 255, 255);">Delay</div></div></div>
+    </div>
+    <div class="del-bypass">
+        <div id="delBypass" onmouseover="toolsdisplayInfo(this);" onmouseout="hideInfo()" nexus-ui="" style="width: 50px; height: 25px;"><svg width="50" height="25" style="cursor: pointer;"><rect x="6.25" y="6.25" rx="6.25" ry="6.25" width="37.5" height="12.5" fill="#367C66"></rect><circle cx="12.5" cy="12.5" r="12.5" fill="#59C9A5"></circle></svg></div>
+    </div>
+    <div class="dist-button">
+        <div id="distButton" onmouseover="toolsdisplayInfo(this);" onmouseout="hideInfo()" nexus-ui="" style="width: 120px; height: 35px;"><div style="border-radius: 10px; background-color: rgb(51, 58, 86); color: rgb(255, 255, 255); cursor: pointer;"><div style="border-radius: 10px; width: 120px; height: 35px; box-sizing: border-box; display: table-cell; vertical-align: middle; text-align: center; font-family: &quot;Work Sans&quot;, sans-serif; font-weight: 500; opacity: 1; font-size: 16px; color: rgb(255, 255, 255);">Distortion</div></div></div>
+    </div>
+    <div class="dist-bypass">
+        <div id="distBypass" onmouseover="toolsdisplayInfo(this);" onmouseout="hideInfo()" nexus-ui="" style="width: 50px; height: 25px;"><svg width="50" height="25" style="cursor: pointer;"><rect x="6.25" y="6.25" rx="6.25" ry="6.25" width="37.5" height="12.5" fill="#367C66"></rect><circle cx="12.5" cy="12.5" r="12.5" fill="#59C9A5"></circle></svg></div>
+    </div>
+    <div class="comp-button">
+        <div id="compButton" onmouseover="toolsdisplayInfo(this);" onmouseout="hideInfo()" nexus-ui="" style="width: 120px; height: 35px;"><div style="border-radius: 10px; background-color: rgb(51, 58, 86); color: rgb(255, 255, 255); cursor: pointer;"><div style="border-radius: 10px; width: 120px; height: 35px; box-sizing: border-box; display: table-cell; vertical-align: middle; text-align: center; font-family: &quot;Work Sans&quot;, sans-serif; font-weight: 500; opacity: 1; font-size: 16px; color: rgb(255, 255, 255);">Compressor</div></div></div>
+    </div>
+    <div class="comp-bypass">
+        <div id="compBypass" onmouseover="toolsdisplayInfo(this);" onmouseout="hideInfo()" nexus-ui="" style="width: 50px; height: 25px;"><svg width="50" height="25" style="cursor: pointer;"><rect x="6.25" y="6.25" rx="6.25" ry="6.25" width="37.5" height="12.5" fill="#367C66"></rect><circle cx="12.5" cy="12.5" r="12.5" fill="#59C9A5"></circle></svg></div>
+    </div>
+</r-top>
+<r-bottom>
+    <div class="master-title"><h3>Master</h3></div>
+    <div class="master-cont">
+        <div class="gain-title">
+            <p>Gain</p>
+        </div>
+        <div class="master-meter">
+            <div id="masterMeter" style="border: 1px solid rgb(205, 205, 205); display: table; width: 30px; height: 100px;" onmouseover="toolsdisplayInfo(this);" onmouseout="hideInfo()" nexus-ui=""><canvas width="60" height="200" style="width: 30px; height: 100px; background-color: rgb(51, 58, 86); cursor: pointer;"></canvas></div>
+        </div>
+        <div class="master-gain">
+            <div id="masterGainInput" onmouseover="toolsdisplayInfo(this);" onmouseout="hideInfo()" nexus-ui="" style="width: 15px; height: 100px;"><svg width="15" height="100" style="cursor: pointer;"><rect x="7.5" y="0" transform="translate(-3.75,0)" rx="3.75" ry="3.75" width="7.5" height="100" fill="#CDCDCD"></rect><rect x="7.5" y="5.625" width="7.5" height="94.375" transform="translate(-3.75,0)" rx="3.75" ry="3.75" fill="#333A56"></rect><circle cx="7.5" cy="5.625" r="5.625" fill="#333A56"></circle></svg></div>
+        </div>
+        <div class="master-gain-disp">
+            <div id="masterGainDisp" nexus-ui="" style="width: 40px; height: 22px;"><input type="text" style="width: 40px; height: 22px; background-color: rgb(51, 58, 86); color: rgb(255, 255, 255); font-family: arial; font-weight: 500; font-size: 11px; border: none; outline: none; padding: 5.5px; box-sizing: border-box; cursor: pointer;"></div>
+        </div>
+        <div class="pan-title">
+            <p>Pan</p>
+        </div>
+        <div class="master-pan">
+            <div id="masterPanInput" onmouseover="toolsdisplayInfo(this);" onmouseout="hideInfo()" nexus-ui="" style="width: 50px; height: 50px;"><svg width="50" height="50" style="cursor: pointer;"><circle cx="25" cy="25" r="23.75" fill="#333A56"></circle><path d="M 25 1.25 A 23.75 23.75 0 0 0 24.999999999999996 48.75" stroke-width="2.5" fill="none" stroke="none"></path><path d="M 25.000000000000007 1.25 A 23.75 23.75 0 0 0 25.000000000000007 1.25" stroke-width="2.5" fill="none" stroke="none"></path><path d="M 25 1.25 A 23.75 23.75 0 0 0 24.999999999999996 48.75 L 25 25" fill-opacity="0.3" fill="none"></path><path d="M 25.000000000000007 1.25 A 23.75 23.75 0 0 0 25.000000000000007 1.25 L 25 25" fill-opacity="0.3" fill="none"></path><path d="M 25 25 L 25 0" stroke-width="2.5" stroke="#CDCDCD"></path><circle cx="25" cy="25" r="4.166666666666667" fill="#CDCDCD"></circle></svg></div>
+        </div>
+        <div class="master-pan-disp">
+            <div id="masterPanDisp" nexus-ui="" style="width: 40px; height: 22px;"><input type="text" style="width: 40px; height: 22px; background-color: rgb(51, 58, 86); color: rgb(255, 255, 255); font-family: arial; font-weight: 500; font-size: 11px; border: none; outline: none; padding: 5.5px; box-sizing: border-box; cursor: pointer;"></div>
+        </div>
+        <div class="mute-title">
+            <p>Mute</p>
+        </div>
+        <div class="master-mute">
+            <div id="masterMute" onmouseover="toolsdisplayInfo(this);" onmouseout="hideInfo()" nexus-ui="" style="width: 30px; height: 30px;"><svg width="30" height="30" style="cursor: pointer;"><circle cx="15" cy="15" r="14.25" fill="#59C9A5"></circle><defs><radialgradient id="gradient18990302880" cx="50%" cy="50%" r="50%"><stop id="stop0" offset="30%" stop-color="#FB4D3D"></stop><stop id="stop1" offset="100%" stop-color="#59C9A5"></stop></radialgradient></defs></svg></div>
+        </div>
+    </div>
+    <div class="master-visualiser">
+        <div class="visualizer-canvas">
+            <div id="oscDiv">
+                <div id="masterOscilloscope" style="display: none; width: 280px; height: 100px;" nexus-ui=""><canvas width="560" height="200" style="width: 280px; height: 100px; background-color: rgb(51, 58, 86); cursor: pointer;"></canvas></div>
+            </div>
+            <div id="spectroDiv">
+                <div id="masterSpectrogram" style="border: 1px solid rgb(205, 205, 205); display: table; width: 280px; height: 100px;" nexus-ui=""><canvas width="560" height="200" style="width: 280px; height: 100px; background-color: rgb(51, 58, 86); cursor: pointer;"></canvas></div>
+            </div>
+        </div>
+        <div class="visualizer-radio">
+            <div id="masterVisRadio" onmouseover="toolsdisplayInfo(this);" onmouseout="hideInfo()" nexus-ui="" style="width: 120px; height: 25px;"><div style="cursor: pointer;"><span style="width: 60px; height: 25px;"><svg width="60" height="25" style="cursor: pointer;"><circle cx="30" cy="12.5" r="11" fill="#07889B"></circle><defs><radialgradient id="gradient16037472367" cx="50%" cy="50%" r="50%"><stop id="stop0" offset="30%" stop-color="#CDCDCD"></stop><stop id="stop1" offset="100%" stop-color="#333A56"></stop></radialgradient></defs></svg></span><span style="width: 60px; height: 25px;"><svg width="60" height="25" style="cursor: pointer;"><circle cx="30" cy="12.5" r="11" fill="#66B9BF"></circle><defs><radialgradient id="gradient7503867645" cx="50%" cy="50%" r="50%"><stop id="stop0" offset="30%" stop-color="#CDCDCD"></stop><stop id="stop1" offset="100%" stop-color="#333A56"></stop></radialgradient></defs></svg></span></div></div>
+        </div>
+    </div>
+</r-bottom>
+<script>
+    Nexus.colors.accent = "#CDCDCD", Nexus.colors.fill = "#333A56", Nexus.colors.dark = "#FFFFFF";
+    Nexus.context = chainStop.context;
+    var masterGainInput = new Nexus.Slider('#masterGainInput', {
+        'size': [15, 100],
+        'mode': 'relative',
+        'min': 0,
+        'max': 1.2,
+        'step': 0,
+        'value': 1
+    })
+    masterGainInput.colorize('fill', "#CDCDCD");
+    masterGainInput.colorize('accent', "#333A56");
+    var masterGainDisp = new Nexus.Number('#masterGainDisp', {
+        'size': [40, 22]
+    });
+    masterGainDisp.link(masterGainInput);
+    var masterMeter = new Nexus.Meter('#masterMeter', {
+        size: [30, 100]
+    })
+    var masterPanInput = new Nexus.Dial('#masterPanInput', {
+        'size': [50, 50],
+        'interaction': 'radial', // "radial", "vertical", or "horizontal"
+        'mode': 'relative',
+        'min': -1,
+        'max': 1,
+        'step': 0,
+        'value': 0
+    })
+    cleanDial(masterPanInput);
+    var masterPanDisp = new Nexus.Number('#masterPanDisp', {
+        'size': [40, 22]
+    });
+    masterPanDisp.link(masterPanInput);
+    var masterMute = new Nexus.Button('#masterMute', {
+        'size': [30, 30],
+        'mode': 'toggle',
+        'state': false
+    })
+    masterMute.colors.accent = "#FB4D3D";
+    masterMute.colorize('fill', "#59C9A5");
+    var masterOscilloscope = new Nexus.Oscilloscope('#masterOscilloscope', {
+        'size': [280, 100]
+    })
+    var masterSpectrogram = new Nexus.Spectrogram('#masterSpectrogram', {
+        'size': [280, 100]
+    })
+    var masterVisRadio = new Nexus.RadioButton('#masterVisRadio', {
+        'size': [120, 25],
+        'numberOfButtons': 2,
+        'active': 0
+    })
+    masterVisRadio.colorize('fill', "#66B9BF");
+    masterVisRadio.colorize('accent', "#07889B");
+    var eqButton = new Nexus.TextButton('#eqButton', {
+        'size': [120, 35],
+        'state': false,
+        'text': 'EQ',
+        'alternate': false
+    })
+    eqButton.textElement.style.fontSize = "16px";
+    eqButton.textElement.style.fontFamily = "'Work Sans', sans-serif";
+    var eqBypass = new Nexus.Toggle('#eqBypass', {
+        'size': [50, 25],
+        'state': false
+    })
+    eqBypass.colorize('fill', "#367C66");
+    eqBypass.colorize('accent', "#59C9A5");
+    var revButton = new Nexus.TextButton('#revButton', {
+        'size': [120, 35],
+        'state': false,
+        'text': 'Reverb',
+        'alternate': false
+    })
+    revButton.textElement.style.fontSize = "16px";
+    revButton.textElement.style.fontFamily = "'Work Sans', sans-serif";
+    var revBypass = new Nexus.Toggle('#revBypass', {
+        'size': [50, 25],
+        'state': false
+    })
+    revBypass.colorize('fill', "#367C66");
+    revBypass.colorize('accent', "#59C9A5");
+    var delButton = new Nexus.TextButton('#delButton', {
+        'size': [120, 35],
+        'state': false,
+        'text': 'Delay',
+        'alternate': false
+    })
+    delButton.textElement.style.fontSize = "16px";
+    delButton.textElement.style.fontFamily = "'Work Sans', sans-serif";
+    var delBypass = new Nexus.Toggle('#delBypass', {
+        'size': [50, 25],
+        'state': false
+    })
+    delBypass.colorize('fill', "#367C66");
+    delBypass.colorize('accent', "#59C9A5");
+    var distButton = new Nexus.TextButton('#distButton', {
+        'size': [120, 35],
+        'state': false,
+        'text': 'Distortion',
+        'alternate': false
+    })
+    distButton.textElement.style.fontSize = "16px";
+    distButton.textElement.style.fontFamily = "'Work Sans', sans-serif";
+    var distBypass = new Nexus.Toggle('#distBypass', {
+        'size': [50, 25],
+        'state': false
+    })
+    distBypass.colorize('fill', "#367C66");
+    distBypass.colorize('accent', "#59C9A5");
+    var compButton = new Nexus.TextButton('#compButton', {
+        'size': [120, 35],
+        'state': false,
+        'text': 'Compressor',
+        'alternate': false
+    })
+    compButton.textElement.style.fontSize = "16px";
+    compButton.textElement.style.fontFamily = "'Work Sans', sans-serif";
+    var compBypass = new Nexus.Toggle('#compBypass', {
+        'size': [50, 25],
+        'state': false
+    })
+    compBypass.colorize('fill', "#367C66");
+    compBypass.colorize('accent', "#59C9A5");
+    // Get the modal
+    var fxModal = document.getElementById('fxModal');
+    // Get the button that opens the modal
+    var eqBtn = document.getElementById("eqButton");
+    var revBtn = document.getElementById("revButton");
+    var delBtn = document.getElementById("delButton");
+    var distBtn = document.getElementById("distButton");
+    var compBtn = document.getElementById("compButton");
+    // Get the <span> element that closes the modal
+    var span = document.getElementById("fxClose");
+    // When the user clicks on the button, open the modal
+    eqBtn.onclick = function() {
+        fxModal.style.display = "block";
+        document.getElementById("eq-focus").focus();
+        effectsTab(event, 'equaliser')
+    }
+    revBtn.onclick = function() {
+        fxModal.style.display = "block";
+        document.getElementById("rev-focus").focus();
+        effectsTab(event, 'reverb')
+    }
+    delBtn.onclick = function() {
+        fxModal.style.display = "block";
+        document.getElementById("del-focus").focus();
+        effectsTab(event, 'delay')
+    }
+    distBtn.onclick = function() {
+        fxModal.style.display = "block";
+        document.getElementById("dist-focus").focus();
+        effectsTab(event, 'distortion')
+    }
+    compBtn.onclick = function() {
+        fxModal.style.display = "block";
+        document.getElementById("comp-focus").focus();
+        effectsTab(event, 'compressor')
+    }
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+        fxModal.style.display = "none";
+    }
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == fxModal) fxModal.style.display = "none";
+        if (event.target == toolsModal) toolsModal.style.display = "none";
+    }
+
+    function effectsTab(evt, effect) {
+        var i, x, tablinks;
+        x = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < x.length; i++) x[i].style.display = "none";
+        tablinks = document.getElementsByClassName("tablink");
+        document.getElementById(effect).style.display = "block";
+    }
+    var mute = false;
+    var lastGain;
+    masterMute.on('change', function(data) {
+        mute = !mute;
+        if (mute) {
+            lastGain = masterGainInput.value;
+            masterGainInput.value = 0;
+            master.setParameterByName("gain", 0);
+        } else {
+            masterGainInput.value = lastGain;
+            master.setParameterByName("gain", lastGain);
+        }
+    })
+    masterMeter.colors.fill = "#E9E9E9";
+    masterMeter.colors.accent = "#07889B";
+    masterOscilloscope.colors.fill = "#E9E9E9";
+    masterOscilloscope.colors.accent = "#07889B";
+    masterSpectrogram.colors.fill = "#E9E9E9";
+    masterSpectrogram.colors.accent = "#07889B";
+    masterMeter.connect(chainStop);
+    masterOscilloscope.connect(chainStop);
+    masterSpectrogram.connect(chainStop);
+    masterVisRadio.on('change', function(input) {
+        if (input == 0) {
+            $('#masterOscilloscope').hide();
+            $('#masterSpectrogram').show();
+        } else if (input == 1) {
+            $('#masterOscilloscope').show();
+            $('#masterSpectrogram').hide();
+        }
+    })
+    var eqSwitch = new Nexus.Toggle('#eqSwitch', {
+        'size': [40, 20],
+        'state': false
+    })
+    eqSwitch.colorize('fill', "#367C66");
+    eqSwitch.colorize('accent', "#59C9A5");
+    eqSwitch.on('change', function(v) {
+        if (eqSwitch.state != eqBypass.state) eqBypass.click();
+    })
+    eqBypass.on('change', function(v) {
+        if (eqSwitch.state != eqBypass.state) eqSwitch.click();
+    })
+    dragElement(document.getElementById("fxModal"));
+    dragElement(document.getElementById("tlsModal"));
+
+    function dragElement(elmnt) {
+        var pos1 = 0,
+            pos2 = 0,
+            pos3 = 0,
+            pos4 = 0;
+        if (document.getElementById(elmnt.id + "-header")) {
+            /* if present, the header is where you move the DIV from:*/
+            document.getElementById(elmnt.id + "-header").onmousedown = dragMouseDown;
+        } else {
+            /* otherwise, move the DIV from anywhere inside the DIV:*/
+            // elmnt.onmousedown = dragMouseDown;
+        }
+
+        function dragMouseDown(e) {
+            e = e || window.event;
+            e.preventDefault();
+            // get the mouse cursor position at startup:
+            pos3 = e.clientX;
+            pos4 = e.clientY;
+            document.onmouseup = closeDragElement;
+            // call a function whenever the cursor moves:
+            document.onmousemove = elementDrag;
+        }
+
+        function elementDrag(e) {
+            e = e || window.event;
+            e.preventDefault();
+            // calculate the new cursor position:
+            pos1 = pos3 - e.clientX;
+            pos2 = pos4 - e.clientY;
+            pos3 = e.clientX;
+            pos4 = e.clientY;
+            // set the element's new position:
+            elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+            elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+        }
+
+        function closeDragElement() {
+            /* stop moving when mouse button is released:*/
+            document.onmouseup = null;
+            document.onmousemove = null;
+        }
+    }
+</script>
+</sb-right>
+  </div>
+<div id="sb-tabs"><div id="fxModal" class="fx-modal">
+    <div class="fx-modal-content">
+        <div class="tab-bar" id="fxModal-header">
+            <button class="tablink" id="eq-focus" onclick="effectsTab(event,&#39;equaliser&#39;)">Equaliser</button>
+            <button class="tablink" id="rev-focus" onclick="effectsTab(event,&#39;reverb&#39;)">Reverb</button>
+            <button class="tablink" id="del-focus" onclick="effectsTab(event,&#39;delay&#39;)">Delay</button>
+            <button class="tablink" id="dist-focus" onclick="effectsTab(event,&#39;distortion&#39;)">Distortion</button>
+            <button class="tablink" id="comp-focus" onclick="effectsTab(event,&#39;compressor&#39;)">Compressor</button>
+            <span class="close" id="fxClose">×</span>
+        </div>
+        <div id="equaliser" class="tabcontent" style="display:none">
+            <div class="rcorners">
+                <div class="fxBypass" id="eqSwitch" nexus-ui="" style="width: 40px; height: 20px;"><svg width="40" height="20" style="cursor: pointer;"><rect x="5" y="5" rx="5" ry="5" width="30" height="10" fill="#367C66"></rect><circle cx="10" cy="10" r="10" fill="#59C9A5"></circle></svg></div>
+                <canvas class="testCanv" id="EqualiserResponseCanvas" width="690" height="180" style="margin-top:10px;"></canvas>
+                <div id="equaliser-control"><script src="./Whoosh_files/jquery-knob.js" charset="utf-8"></script>
+<style media="screen" id="eq">
+  .testCanv {
+    background-image: url("../../images/eq-background-grid.png");
+    background-size: cover;
+    padding: 0;
+    margin: auto;
+    display: block;
+    margin: auto;
+  }
+  .rcorners {
+    padding-top: 15px;
+    margin: auto;
+    width: auto;
+  }
+  .columns {
+    margin: 15px;
+    display: flex;
+  }
+  .column {
+    border-radius: 15px;
+    background: var(--c2);
+    flex: 1;
+    margin-right: 10px;
+  }
+  .column:last-child {
+    margin-right: 0;
+  }
+  .innerColumn {
+    border-radius: 5px;
+    margin: 10px;
+  }
+  .knobCol {
+    border-radius: 0;
+    border-bottom: 10px;
+    text-align: center;
+  }
+  .band-title {
+    color: black;
+    font-weight: bold;
+  }
+  .eqParamTitle {
+    color: black;
+    font-size: 0.8em;
+    font-weight: lighter;
+  }
+</style>
+<div class="columns">
+  <div class="column">
+    <h4 class="band-title" style="text-align:center; color: white;">Low</h4>
+    <div class="innerColumn">
+      <div class="knobCol">
+        <h5 class="eqParamTitle" style="text-align:center; padding-bottom: 3px">Type</h5>
+        <select id="band1FilterTypeInput" onmouseover="toolsdisplayInfo(this);" onmouseout="hideInfo()" style="padding-top: 0; padding-bottom: 5px;">
+          <option value="0">Low Shelf</option>
+          <option value="1">Low Cut</option>
+        </select>
+      </div>
+      <div class="knobCol">
+        <h5 class="eqParamTitle" style="text-align:center;">Frequency</h5>
+        <div style="display:inline;width:80px;height:80px;"><canvas width="80" height="80px"></canvas><input id="lfEQFreqInput" onmouseover="toolsdisplayInfo(this);" onmouseout="hideInfo()" type="text" class="dial freqDial" data-min="22" data-max="1000" data-step="0.1" value="150" style="width: 44px; height: 26px; position: absolute; vertical-align: middle; margin-top: 26px; margin-left: -62px; border: 0px; background: none; font: bold 13px Arial; text-align: center; color: black; padding: 0px; appearance: none;"></div>
+      </div>
+      <div class="knobCol">
+        <h5 class="eqParamTitle" style="text-align:center;">Gain</h5>
+        <div style="display:inline;width:80px;height:80px;"><canvas width="80" height="80px"></canvas><input id="lfEQGainInput" onmouseover="toolsdisplayInfo(this);" onmouseout="hideInfo()" type="text" class="dial gainDial" value="0" style="width: 44px; height: 26px; position: absolute; vertical-align: middle; margin-top: 26px; margin-left: -62px; border: 0px; background: none; font: bold 20px Arial; text-align: center; color: black; padding: 0px; appearance: none;"></div>
+      </div>
+      <div class="knobCol">
+        <h5 class="eqParamTitle" style="text-align:center;">Q</h5>
+        <div style="display:inline;width:80px;height:80px;"><canvas width="80" height="80px"></canvas><input id="lfEQQInput" onmouseover="toolsdisplayInfo(this);" onmouseout="hideInfo()" type="text" class="dial qDial" value="0.6" style="width: 44px; height: 26px; position: absolute; vertical-align: middle; margin-top: 26px; margin-left: -62px; border: 0px; background: none; font: bold 16px Arial; text-align: center; color: black; padding: 0px; appearance: none;"></div>
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <h4 class="band-title" style="text-align:center; color: rgb(236, 220, 172);">Low-Mid</h4>
+    <div class="innerColumn">
+        <br>
+        <br>
+      <div class="knobCol">
+        <h5 class="eqParamTitle" style="text-align:center;">Frequency</h5>
+        <div style="display:inline;width:80px;height:80px;"><canvas width="80" height="80px"></canvas><input id="lmfEQFreqInput" onmouseover="toolsdisplayInfo(this);" onmouseout="hideInfo()" type="text" class="dial freqDial" data-min="82" data-max="3900" data-step="0.1" value="560" style="width: 44px; height: 26px; position: absolute; vertical-align: middle; margin-top: 26px; margin-left: -62px; border: 0px; background: none; font: bold 13px Arial; text-align: center; color: black; padding: 0px; appearance: none;"></div>
+      </div>
+      <div class="knobCol">
+        <h5 class="eqParamTitle" style="text-align:center;">Gain</h5>
+        <div style="display:inline;width:80px;height:80px;"><canvas width="80" height="80px"></canvas><input id="lmfEQGainInput" onmouseover="toolsdisplayInfo(this);" onmouseout="hideInfo()" type="text" class="dial gainDial" value="0" style="width: 44px; height: 26px; position: absolute; vertical-align: middle; margin-top: 26px; margin-left: -62px; border: 0px; background: none; font: bold 20px Arial; text-align: center; color: black; padding: 0px; appearance: none;"></div>
+      </div>
+      <div class="knobCol">
+        <h5 class="eqParamTitle" style="text-align:center;">Q</h5>
+        <div style="display:inline;width:80px;height:80px;"><canvas width="80" height="80px"></canvas><input id="lmfEQQInput" onmouseover="toolsdisplayInfo(this);" onmouseout="hideInfo()" type="text" class="dial qDial" value="0.6" style="width: 44px; height: 26px; position: absolute; vertical-align: middle; margin-top: 26px; margin-left: -62px; border: 0px; background: none; font: bold 16px Arial; text-align: center; color: black; padding: 0px; appearance: none;"></div>
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <h4 class="band-title" style="text-align:center; color: #dd9b95">Mid</h4>
+    <div class="innerColumn">
+      <br>
+      <br>
+      <div class="knobCol">
+        <h5 class="eqParamTitle" style="text-align:center;">Frequency</h5>
+        <div style="display:inline;width:80px;height:80px;"><canvas width="80" height="80px"></canvas><input id="mEQFreqInput" onmouseover="toolsdisplayInfo(this);" onmouseout="hideInfo()" type="text" class="dial freqDial" data-min="180" data-max="4700" data-step="0.1" value="1000" style="width: 44px; height: 26px; position: absolute; vertical-align: middle; margin-top: 26px; margin-left: -62px; border: 0px; background: none; font: bold 13px Arial; text-align: center; color: black; padding: 0px; appearance: none;"></div>
+      </div>
+      <div class="knobCol">
+        <h5 class="eqParamTitle" style="text-align:center;">Gain</h5>
+        <div style="display:inline;width:80px;height:80px;"><canvas width="80" height="80px"></canvas><input id="mEQGainInput" onmouseover="toolsdisplayInfo(this);" onmouseout="hideInfo()" type="text" class="dial gainDial" value="0" style="width: 44px; height: 26px; position: absolute; vertical-align: middle; margin-top: 26px; margin-left: -62px; border: 0px; background: none; font: bold 20px Arial; text-align: center; color: black; padding: 0px; appearance: none;"></div>
+      </div>
+      <div class="knobCol">
+        <h5 class="eqParamTitle" style="text-align:center;">Q</h5>
+        <div style="display:inline;width:80px;height:80px;"><canvas width="80" height="80px"></canvas><input id="mEQQInput" onmouseover="toolsdisplayInfo(this);" onmouseout="hideInfo()" type="text" class="dial qDial" value="0.6" style="width: 44px; height: 26px; position: absolute; vertical-align: middle; margin-top: 26px; margin-left: -62px; border: 0px; background: none; font: bold 16px Arial; text-align: center; color: black; padding: 0px; appearance: none;"></div>
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <h4 class="band-title" style="text-align:center; color: #38A53B">High-Mid</h4>
+    <div class="innerColumn">
+      <br>
+      <br>
+      <div class="knobCol">
+        <h5 class="eqParamTitle" style="text-align:center;">Frequency</h5>
+        <div style="display:inline;width:80px;height:80px;"><canvas width="80" height="80px"></canvas><input id="hmfEQFreqInput" onmouseover="toolsdisplayInfo(this);" onmouseout="hideInfo()" type="text" class="dial freqDial" data-min="220" data-max="10000" data-step="0.1" value="3300" style="width: 44px; height: 26px; position: absolute; vertical-align: middle; margin-top: 26px; margin-left: -62px; border: 0px; background: none; font: bold 11px Arial; text-align: center; color: black; padding: 0px; appearance: none;"></div>
+      </div>
+      <div class="knobCol">
+        <h5 class="eqParamTitle" style="text-align:center;">Gain</h5>
+        <div style="display:inline;width:80px;height:80px;"><canvas width="80" height="80px"></canvas><input id="hmfEQGainInput" onmouseover="toolsdisplayInfo(this);" onmouseout="hideInfo()" type="text" class="dial gainDial" value="0" style="width: 44px; height: 26px; position: absolute; vertical-align: middle; margin-top: 26px; margin-left: -62px; border: 0px; background: none; font: bold 20px Arial; text-align: center; color: black; padding: 0px; appearance: none;"></div>
+      </div>
+      <div class="knobCol">
+        <h5 class="eqParamTitle" style="text-align:center;">Q</h5>
+        <div style="display:inline;width:80px;height:80px;"><canvas width="80" height="80px"></canvas><input id="hmfEQQInput" onmouseover="toolsdisplayInfo(this);" onmouseout="hideInfo()" type="text" class="dial qDial" value="0.6" style="width: 44px; height: 26px; position: absolute; vertical-align: middle; margin-top: 26px; margin-left: -62px; border: 0px; background: none; font: bold 16px Arial; text-align: center; color: black; padding: 0px; appearance: none;"></div>
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <h4 class="band-title" style="text-align:center; color: #66B9BF">High</h4>
+    <div class="innerColumn">
+      <div class="knobCol">
+        <h5 class="eqParamTitle" style="text-align:center; padding-bottom: 3px">Type</h5>
+        <select id="band5FilterTypeInput" onmouseover="toolsdisplayInfo(this);" onmouseout="hideInfo()">
+          <option value="0">High-Shelf</option>
+          <option value="1">High Cut</option>
+        </select>
+      </div>
+      <div class="knobCol">
+        <h5 class="eqParamTitle" style="text-align:center;">Frequency</h5>
+        <div style="display:inline;width:80px;height:80px;"><canvas width="80" height="80px"></canvas><input id="hfEQFreqInput" onmouseover="toolsdisplayInfo(this);" onmouseout="hideInfo()" type="text" class="dial freqDial" data-min="580" data-max="20000" data-step="0.1" value="8200" style="width: 44px; height: 26px; position: absolute; vertical-align: middle; margin-top: 26px; margin-left: -62px; border: 0px; background: none; font: bold 11px Arial; text-align: center; color: black; padding: 0px; appearance: none;"></div>
+      </div>
+      <div class="knobCol">
+        <h5 class="eqParamTitle" style="text-align:center;">Gain</h5>
+        <div style="display:inline;width:80px;height:80px;"><canvas width="80" height="80px"></canvas><input id="hfEQGainInput" onmouseover="toolsdisplayInfo(this);" onmouseout="hideInfo()" type="text" class="dial gainDial" value="0" data-step="step: 0.0001" style="width: 44px; height: 26px; position: absolute; vertical-align: middle; margin-top: 26px; margin-left: -62px; border: 0px; background: none; font: bold 20px Arial; text-align: center; color: black; padding: 0px; appearance: none;"></div>
+      </div>
+      <div class="knobCol">
+        <h5 class="eqParamTitle" style="text-align:center;">Q</h5>
+        <div style="display:inline;width:80px;height:80px;"><canvas width="80" height="80px"></canvas><input id="hfEQQInput" onmouseover="toolsdisplayInfo(this);" onmouseout="hideInfo()" type="text" class="dial qDial" value="0.6" style="width: 44px; height: 26px; position: absolute; vertical-align: middle; margin-top: 26px; margin-left: -62px; border: 0px; background: none; font: bold 16px Arial; text-align: center; color: black; padding: 0px; appearance: none;"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  $(function () {
+    $(".gainDial").dial({
+      'width': 80,
+      height: 80,
+      thickness: .2,
+      angleOffset: -125,
+      angleArc: 250,
+      min: -12,
+      max: 12,
+      step: 0.1,
+      fgColor: "#367C66",
+      inputColor: "black",
+      bgColor: "#59C9A5"
+    })
+    $(".qDial").dial({
+      'width': 80,
+      height: 80,
+      thickness: .2,
+      angleOffset: -125,
+      angleArc: 250,
+      min: 0.1,
+      max: 10,
+      step: 0.0001,
+      fgColor: "#FB4D3D",
+      inputColor: "black",
+      bgColor: "#dd9b95"
+    })
+    $(".freqDial").dial({
+      'width': 80,
+      height: 80,
+      thickness: .2,
+      angleOffset: -125,
+      angleArc: 250,
+      'format': function (v) { return Math.pow(10, v).toFixed(0); },
+      fgColor: "#E9B000",
+      inputColor: "black",
+      bgColor: "rgb(236, 220, 172)"
+    })
+    $('#lfEQGainInput').trigger('configure',{'change': function (v) { eq.setParameterByName("Band1Gain", v); } });
+    $('#lfEQFreqInput').trigger('configure',{'change': function (v) { eq.setParameterByName("Band1Frequency", v); }});
+    $('#lfEQQInput').trigger('configure',{'change': function (v) { eq.setParameterByName("Band1Q", v); } });
+    $('#lmfEQGainInput').trigger('configure',{'change': function (v) { eq.setParameterByName("Band2Gain", v); } });
+    $('#lmfEQFreqInput').trigger('configure',{'change': function (v) { eq.setParameterByName("Band2Frequency", v); }});
+    $('#lmfEQQInput').trigger('configure',{'change': function (v) { eq.setParameterByName("Band2Q", v); } });
+    $('#mEQGainInput').trigger('configure',{'change': function (v) { eq.setParameterByName("Band3Gain", v); } });
+    $('#mEQFreqInput').trigger('configure',{'change': function (v) {eq.setParameterByName("Band3Frequency", v); }});
+    $('#mEQQInput').trigger('configure', {'change': function (v) { eq.setParameterByName("Band3Q", v); }});
+    $('#hmfEQGainInput').trigger('configure', {'change': function (v) { eq.setParameterByName("Band4Gain", v); } });
+    $('#hmfEQFreqInput').trigger('configure', {'change': function (v) {eq.setParameterByName("Band4Frequency", v)}});
+    $('#hmfEQQInput').trigger('configure', {'change': function (v) {eq.setParameterByName("Band4Q", v)}});
+    $('#hfEQGainInput').trigger('configure', {'change': function (v) {  eq.setParameterByName("Band5Gain", v)}});
+    $('#hfEQFreqInput').trigger('configure', {'change': function (v) {eq.setParameterByName("Band5Frequency", v)}});
+    $('#hfEQQInput').trigger('configure', {'change': function (v) {eq.setParameterByName("Band5Q",v);}});
+    $('#band1FilterTypeInput').change(function () {eq.setParameterByName("Band1FilterType",parseInt($('#band1FilterTypeInput').val()))});
+    $('#band5FilterTypeInput').change(function () {eq.setParameterByName("Band5FilterType",parseInt($('#band5FilterTypeInput').val()))});
+  });
+</script>
+</div>
+            </div>
+        </div>
+        <div id="reverb" class="tabcontent" style="display:none">
+            <div class="effect-holder">
+                <div id="reverb-control"><div class="effect-container" id="reverb">
+<section style="background-color: var(--c2); border-radius: 10px; width: auto;">
+  <div class="effect-header"><h3 class="effect-title">Reverb</h3></div>
+  <div class="center"><div id="reverbType" onmouseover="toolsdisplayInfo(this);" onmouseout="hideInfo()" nexus-ui="" style="width: 150px; height: 30px;"><select style="font-size: 15px; outline: none; width: 150px; height: 30px; background-color: rgb(102, 185, 191); color: rgb(51, 51, 51); border: 0px solid rgb(204, 204, 204); cursor: pointer;"><option value="0">Small Impulse Response</option><option value="1">Large Impulse Response</option><option value="2">Château de Logne</option><option value="3">Deep Space</option><option value="4">Large Wide Hall</option><option value="5">Narrow Space</option><option value="6">Parking Garage</option><option value="7">Scala di Milano Opera Hall</option><option value="8">St. Nicolaes Church</option><option value="9">Digital Reverb</option><option value="10">Divorce Beach</option></select></div></div>
+  <div class="label"><label class="effectLabel">High Cut</label></div>
+  <div class="slider"><div id="revHCInput" onmouseover="toolsdisplayInfo(this);" onmouseout="hideInfo()" nexus-ui="" style="width: 270px; height: 20px;"><svg width="270" height="20" style="cursor: pointer;"><rect x="0" y="10" transform="translate(0,-5)" rx="5" ry="5" width="270" height="10" fill="#99CED4"></rect><rect x="0" y="10" width="262.5" height="10" transform="translate(0,-5)" rx="5" ry="5" fill="#4A8DAC"></rect><circle cx="262.5" cy="10" r="7.5" fill="#4A8DAC"></circle></svg></div></div>
+  <div class="number"><span id="revHCDisp" nexus-ui="" style="width: 55px; height: 30px;"><input type="text" style="width: 55px; height: 30px; background-color: rgb(153, 206, 212); color: rgb(51, 51, 51); font-family: arial; font-weight: 500; font-size: 15px; border: none; outline: none; padding: 7.5px; box-sizing: border-box; cursor: pointer;"></span></div>
+  <div class="label"><label class="effectLabel">Low Cut</label></div>
+  <div class="slider"><div id="revLCInput" onmouseover="toolsdisplayInfo(this);" onmouseout="hideInfo()" nexus-ui="" style="width: 270px; height: 20px;"><svg width="270" height="20" style="cursor: pointer;"><rect x="0" y="10" transform="translate(0,-5)" rx="5" ry="5" width="270" height="10" fill="#99CED4"></rect><rect x="0" y="10" width="7.5" height="10" transform="translate(0,-5)" rx="5" ry="5" fill="#4A8DAC"></rect><circle cx="7.5" cy="10" r="7.5" fill="#4A8DAC"></circle></svg></div></div>
+  <div class="number"><span id="revLCDisp" nexus-ui="" style="width: 55px; height: 30px;"><input type="text" style="width: 55px; height: 30px; background-color: rgb(153, 206, 212); color: rgb(51, 51, 51); font-family: arial; font-weight: 500; font-size: 15px; border: none; outline: none; padding: 7.5px; box-sizing: border-box; cursor: pointer;"></span></div>
+  <div class="label"><label class="effectLabel">Wet Level</label></div>
+  <div class="slider"><div id="revWetInput" onmouseover="toolsdisplayInfo(this);" onmouseout="hideInfo()" nexus-ui="" style="width: 270px; height: 20px;"><svg width="270" height="20" style="cursor: pointer;"><rect x="0" y="10" transform="translate(0,-5)" rx="5" ry="5" width="270" height="10" fill="#99CED4"></rect><rect x="0" y="10" width="262.5" height="10" transform="translate(0,-5)" rx="5" ry="5" fill="#4A8DAC"></rect><circle cx="262.5" cy="10" r="7.5" fill="#4A8DAC"></circle></svg></div></div>
+  <div class="number"><span id="revWetDisp" nexus-ui="" style="width: 55px; height: 30px;"><input type="text" style="width: 55px; height: 30px; background-color: rgb(153, 206, 212); color: rgb(51, 51, 51); font-family: arial; font-weight: 500; font-size: 15px; border: none; outline: none; padding: 7.5px; box-sizing: border-box; cursor: pointer;"></span></div>
+  <div class="label"><label class="effectLabel">Dry Level</label></div>
+  <div class="slider"><div id="revDryInput" onmouseover="toolsdisplayInfo(this);" onmouseout="hideInfo()" nexus-ui="" style="width: 270px; height: 20px;"><svg width="270" height="20" style="cursor: pointer;"><rect x="0" y="10" transform="translate(0,-5)" rx="5" ry="5" width="270" height="10" fill="#99CED4"></rect><rect x="0" y="10" width="262.5" height="10" transform="translate(0,-5)" rx="5" ry="5" fill="#4A8DAC"></rect><circle cx="262.5" cy="10" r="7.5" fill="#4A8DAC"></circle></svg></div></div>
+  <div class="number"><span id="revDryDisp" nexus-ui="" style="width: 55px; height: 30px;"><input type="text" style="width: 55px; height: 30px; background-color: rgb(153, 206, 212); color: rgb(51, 51, 51); font-family: arial; font-weight: 500; font-size: 15px; border: none; outline: none; padding: 7.5px; box-sizing: border-box; cursor: pointer;"></span></div>
+  <div class="label"><label class="effectLabel">Main Level</label></div>
+  <div class="slider"><div id="revLevelInput" onmouseover="toolsdisplayInfo(this);" onmouseout="hideInfo()" nexus-ui="" style="width: 270px; height: 20px;"><svg width="270" height="20" style="cursor: pointer;"><rect x="0" y="10" transform="translate(0,-5)" rx="5" ry="5" width="270" height="10" fill="#99CED4"></rect><rect x="0" y="10" width="262.5" height="10" transform="translate(0,-5)" rx="5" ry="5" fill="#4A8DAC"></rect><circle cx="262.5" cy="10" r="7.5" fill="#4A8DAC"></circle></svg></div></div>
+  <div class="number"><span id="revLevelDisp" nexus-ui="" style="width: 55px; height: 30px;"><input type="text" style="width: 55px; height: 30px; background-color: rgb(153, 206, 212); color: rgb(51, 51, 51); font-family: arial; font-weight: 500; font-size: 15px; border: none; outline: none; padding: 7.5px; box-sizing: border-box; cursor: pointer;"></span></div>
+</section>
+</div>
+<script>
+  var bindReverbEffectToInterface = function (afxPlugins) {
+    Nexus.colors.accent = "#4A8DAC",Nexus.colors.fill = "#99CED4";
+    var afxP = afxPlugins.find(function (plugin) { return plugin.node.uniqueID == "RTSFXconvReverb" }).node;
+    // Initialise overdrive controls
+    var sliderSize=[270, 20],boxSize=[55,30];
+    createNexusSlider('#revHCInput',"highCut",afxP,'#revHCDisp',sliderSize,boxSize);
+    createNexusSlider('#revLCInput',"lowCut",afxP,'#revLCDisp',sliderSize,boxSize);
+    createNexusSlider('#revWetInput',"wet",afxP,'#revWetDisp',sliderSize,boxSize);
+    createNexusSlider('#revDryInput',"dry",afxP,'#revDryDisp',sliderSize,boxSize);
+    createNexusSlider('#revLevelInput',"level",afxP,'#revLevelDisp',sliderSize,boxSize);
+    createNexusSelect('#reverbType',"type",afxP,[
+      'Small Impulse Response',
+      'Large Impulse Response',
+      'Château de Logne',
+      'Deep Space',
+      'Large Wide Hall',
+      'Narrow Space',
+      'Parking Garage',
+      'Scala di Milano Opera Hall',
+      'St. Nicolaes Church',
+      'Digital Reverb',
+      'Divorce Beach'],[150,30]);
+    reverbType.colorize('fill', '#66B9BF');
+    reverbType.colorize('accent', '#07889B');
+    bindElementToAudioParamNexus(revBypass,"bypass",afxP);
+  };
+</script>
+</div>
+            </div>
+        </div>
+        <div id="delay" class="tabcontent" style="display:none">
+            <div class="effect-holder">
+                <div id="delay-control"><!-- Delay interface -->
+<div class="effect-container">
+    <section style="background-color: var(--c2); border-radius: 10px; width: auto;">
+        <div class="effect-header">  <h3 class="effect-title">Delay</h3></div>
+        <div class="label"><label class="effectLabel">Feedback</label></div>
+        <div class="slider"><div id="delayFeedbackInput" onmouseover="toolsdisplayInfo(this);" onmouseout="hideInfo()" nexus-ui="" style="width: 270px; height: 20px;"><svg width="270" height="20" style="cursor: pointer;"><rect x="0" y="10" transform="translate(0,-5)" rx="5" ry="5" width="270" height="10" fill="#99CED4"></rect><rect x="0" y="10" width="200.472972972973" height="10" transform="translate(0,-5)" rx="5" ry="5" fill="#4A8DAC"></rect><circle cx="200.472972972973" cy="10" r="7.5" fill="#4A8DAC"></circle></svg></div></div>
+        <div class="number"><span id="delayFeedbackDisp" nexus-ui="" style="width: 55px; height: 30px;"><input type="text" style="width: 55px; height: 30px; background-color: rgb(153, 206, 212); color: rgb(51, 51, 51); font-family: arial; font-weight: 500; font-size: 15px; border: none; outline: none; padding: 7.5px; box-sizing: border-box; cursor: pointer;"></span></div>
+        <div class="label"><label class="effectLabel">Delay Time</label></div>
+        <div class="slider"><div id="delayTimeInput" onmouseover="toolsdisplayInfo(this);" onmouseout="hideInfo()" nexus-ui="" style="width: 270px; height: 20px;"><svg width="270" height="20" style="cursor: pointer;"><rect x="0" y="10" transform="translate(0,-5)" rx="5" ry="5" width="270" height="10" fill="#99CED4"></rect><rect x="0" y="10" width="7.5" height="10" transform="translate(0,-5)" rx="5" ry="5" fill="#4A8DAC"></rect><circle cx="7.5" cy="10" r="7.5" fill="#4A8DAC"></circle></svg></div></div>
+        <div class="number"><span id="delayTimeDisp" nexus-ui="" style="width: 55px; height: 30px;"><input type="text" style="width: 55px; height: 30px; background-color: rgb(153, 206, 212); color: rgb(51, 51, 51); font-family: arial; font-weight: 500; font-size: 15px; border: none; outline: none; padding: 7.5px; box-sizing: border-box; cursor: pointer;"></span></div>
+        <div class="label"><label class="effectLabel">Wet Level</label></div>
+        <div class="slider"><div id="delayWetInput" onmouseover="toolsdisplayInfo(this);" onmouseout="hideInfo()" nexus-ui="" style="width: 270px; height: 20px;"><svg width="270" height="20" style="cursor: pointer;"><rect x="0" y="10" transform="translate(0,-5)" rx="5" ry="5" width="270" height="10" fill="#99CED4"></rect><rect x="0" y="10" width="262.5" height="10" transform="translate(0,-5)" rx="5" ry="5" fill="#4A8DAC"></rect><circle cx="262.5" cy="10" r="7.5" fill="#4A8DAC"></circle></svg></div></div>
+        <div class="number"><span id="delayWetDisp" nexus-ui="" style="width: 55px; height: 30px;"><input type="text" style="width: 55px; height: 30px; background-color: rgb(153, 206, 212); color: rgb(51, 51, 51); font-family: arial; font-weight: 500; font-size: 15px; border: none; outline: none; padding: 7.5px; box-sizing: border-box; cursor: pointer;"></span></div>
+        <div class="label"><label class="effectLabel">Dry Level</label></div>
+        <div class="slider"><div id="delayDryInput" onmouseover="toolsdisplayInfo(this);" onmouseout="hideInfo()" nexus-ui="" style="width: 270px; height: 20px;"><svg width="270" height="20" style="cursor: pointer;"><rect x="0" y="10" transform="translate(0,-5)" rx="5" ry="5" width="270" height="10" fill="#99CED4"></rect><rect x="0" y="10" width="262.5" height="10" transform="translate(0,-5)" rx="5" ry="5" fill="#4A8DAC"></rect><circle cx="262.5" cy="10" r="7.5" fill="#4A8DAC"></circle></svg></div></div>
+        <div class="number"><span id="delayDryDisp" nexus-ui="" style="width: 55px; height: 30px;"><input type="text" style="width: 55px; height: 30px; background-color: rgb(153, 206, 212); color: rgb(51, 51, 51); font-family: arial; font-weight: 500; font-size: 15px; border: none; outline: none; padding: 7.5px; box-sizing: border-box; cursor: pointer;"></span></div>
+        <div class="label"><label class="effectLabel">Cutoff</label></div>
+        <div class="slider"><div id="delayCutoffInput" onmouseover="toolsdisplayInfo(this);" onmouseout="hideInfo()" nexus-ui="" style="width: 270px; height: 20px;"><svg width="270" height="20" style="cursor: pointer;"><rect x="0" y="10" transform="translate(0,-5)" rx="5" ry="5" width="270" height="10" fill="#99CED4"></rect><rect x="0" y="10" width="11.711711711711711" height="10" transform="translate(0,-5)" rx="5" ry="5" fill="#4A8DAC"></rect><circle cx="11.711711711711711" cy="10" r="7.5" fill="#4A8DAC"></circle></svg></div></div>
+        <div class="number"><span id="delayCutoffDisp" nexus-ui="" style="width: 55px; height: 30px;"><input type="text" style="width: 55px; height: 30px; background-color: rgb(153, 206, 212); color: rgb(51, 51, 51); font-family: arial; font-weight: 500; font-size: 15px; border: none; outline: none; padding: 7.5px; box-sizing: border-box; cursor: pointer;"></span></div>
+        <div class="label"><label class="effectLabel">Main Level</label></div>
+        <div class="slider"><div id="delayLevelInput" onmouseover="toolsdisplayInfo(this);" onmouseout="hideInfo()" nexus-ui="" style="width: 270px; height: 20px;"><svg width="270" height="20" style="cursor: pointer;"><rect x="0" y="10" transform="translate(0,-5)" rx="5" ry="5" width="270" height="10" fill="#99CED4"></rect><rect x="0" y="10" width="262.5" height="10" transform="translate(0,-5)" rx="5" ry="5" fill="#4A8DAC"></rect><circle cx="262.5" cy="10" r="7.5" fill="#4A8DAC"></circle></svg></div></div>
+        <div class="number"><span id="delayLevelDisp" nexus-ui="" style="width: 55px; height: 30px;"><input type="text" style="width: 55px; height: 30px; background-color: rgb(153, 206, 212); color: rgb(51, 51, 51); font-family: arial; font-weight: 500; font-size: 15px; border: none; outline: none; padding: 7.5px; box-sizing: border-box; cursor: pointer;"></span></div>
+    </section>
+</div>
+<script>
+    var bindDelayEffectToInterface = function (afxPlugins) {
+        Nexus.colors.accent = "#4A8DAC",Nexus.colors.fill = "#99CED4";
+        var afxP = afxPlugins.find(function (plugin) { return plugin.node.uniqueID == "RTSFXdelay" }).node;
+        // Initialise delay controls
+        var sliderSize=[270, 20],boxSize=[55,30];
+        createNexusSlider('#delayFeedbackInput',"feedback",afxP,'#delayFeedbackDisp',sliderSize,boxSize);
+        createNexusSlider('#delayTimeInput',"delay",afxP,'#delayTimeDisp',sliderSize,boxSize);
+        createNexusSlider('#delayWetInput',"wet",afxP,'#delayWetDisp',sliderSize,boxSize);
+        createNexusSlider('#delayDryInput',"dry",afxP,'#delayDryDisp',sliderSize,boxSize);
+        createNexusSlider('#delayCutoffInput',"cutOff",afxP,'#delayCutoffDisp',sliderSize,boxSize);
+        createNexusSlider('#delayLevelInput',"level",afxP,'#delayLevelDisp',sliderSize,boxSize);
+        bindElementToAudioParamNexus(delBypass,"bypass",afxP);
+    }
+</script>
+</div>
+            </div>
+        </div>
+        <div id="distortion" class="tabcontent" style="display:none">
+            <div class="effect-holder">
+                <div id="distortion-control"><div class="effect-container" id="distortion">
+  <section style="background-color: var(--c2); border-radius: 10px; width: auto;">
+    <div class="effect-header"><h3 class="effect-title">Distortion</h3></div>
+    <div class="label"><label class="effectLabel">Drive</label></div>
+    <div class="slider"><div id="odDriveInput" onmouseover="toolsdisplayInfo(this);" onmouseout="hideInfo()" nexus-ui="" style="width: 270px; height: 20px;"><svg width="270" height="20" style="cursor: pointer;"><rect x="0" y="10" transform="translate(0,-5)" rx="5" ry="5" width="270" height="10" fill="#99CED4"></rect><rect x="0" y="10" width="135" height="10" transform="translate(0,-5)" rx="5" ry="5" fill="#4A8DAC"></rect><circle cx="135" cy="10" r="7.5" fill="#4A8DAC"></circle></svg></div></div>
+    <div class="number"><span id="odDriveDisp" nexus-ui="" style="width: 55px; height: 30px;"><input type="text" style="width: 55px; height: 30px; background-color: rgb(153, 206, 212); color: rgb(51, 51, 51); font-family: arial; font-weight: 500; font-size: 15px; border: none; outline: none; padding: 7.5px; box-sizing: border-box; cursor: pointer;"></span></div>
+    <div class="label"><label class="effectLabel">Tone</label></div>
+    <div class="slider"><div id="odToneInput" onmouseover="toolsdisplayInfo(this);" onmouseout="hideInfo()" nexus-ui="" style="width: 270px; height: 20px;"><svg width="270" height="20" style="cursor: pointer;"><rect x="0" y="10" transform="translate(0,-5)" rx="5" ry="5" width="270" height="10" fill="#99CED4"></rect><rect x="0" y="10" width="262.5" height="10" transform="translate(0,-5)" rx="5" ry="5" fill="#4A8DAC"></rect><circle cx="262.5" cy="10" r="7.5" fill="#4A8DAC"></circle></svg></div></div>
+    <div class="number"><span id="odToneDisp" nexus-ui="" style="width: 55px; height: 30px;"><input type="text" style="width: 55px; height: 30px; background-color: rgb(153, 206, 212); color: rgb(51, 51, 51); font-family: arial; font-weight: 500; font-size: 15px; border: none; outline: none; padding: 7.5px; box-sizing: border-box; cursor: pointer;"></span></div>
+    <div class="label"><label class="effectLabel">Knee</label></div>
+    <div class="slider"><div id="odKneeInput" onmouseover="toolsdisplayInfo(this);" onmouseout="hideInfo()" nexus-ui="" style="width: 270px; height: 20px;"><svg width="270" height="20" style="cursor: pointer;"><rect x="0" y="10" transform="translate(0,-5)" rx="5" ry="5" width="270" height="10" fill="#99CED4"></rect><rect x="0" y="10" width="7.5" height="10" transform="translate(0,-5)" rx="5" ry="5" fill="#4A8DAC"></rect><circle cx="7.5" cy="10" r="7.5" fill="#4A8DAC"></circle></svg></div></div>
+    <div class="number"><span id="odKneeDisp" nexus-ui="" style="width: 55px; height: 30px;"><input type="text" style="width: 55px; height: 30px; background-color: rgb(153, 206, 212); color: rgb(51, 51, 51); font-family: arial; font-weight: 500; font-size: 15px; border: none; outline: none; padding: 7.5px; box-sizing: border-box; cursor: pointer;"></span></div>
+    <div class="label"><label class="effectLabel">Bias</label></div>
+    <div class="slider"><div id="odBiasInput" onmouseover="toolsdisplayInfo(this);" onmouseout="hideInfo()" nexus-ui="" style="width: 270px; height: 20px;"><svg width="270" height="20" style="cursor: pointer;"><rect x="0" y="10" transform="translate(0,-5)" rx="5" ry="5" width="270" height="10" fill="#99CED4"></rect><rect x="0" y="10" width="7.5" height="10" transform="translate(0,-5)" rx="5" ry="5" fill="#4A8DAC"></rect><circle cx="7.5" cy="10" r="7.5" fill="#4A8DAC"></circle></svg></div></div>
+    <div class="number"><span id="odBiasDisp" nexus-ui="" style="width: 55px; height: 30px;"><input type="text" style="width: 55px; height: 30px; background-color: rgb(153, 206, 212); color: rgb(51, 51, 51); font-family: arial; font-weight: 500; font-size: 15px; border: none; outline: none; padding: 7.5px; box-sizing: border-box; cursor: pointer;"></span></div>
+    <div class="label"><label class="effectLabel">Main Level</label></div>
+    <div class="slider"><div id="odLevelInput" onmouseover="toolsdisplayInfo(this);" onmouseout="hideInfo()" nexus-ui="" style="width: 270px; height: 20px;"><svg width="270" height="20" style="cursor: pointer;"><rect x="0" y="10" transform="translate(0,-5)" rx="5" ry="5" width="270" height="10" fill="#99CED4"></rect><rect x="0" y="10" width="262.5" height="10" transform="translate(0,-5)" rx="5" ry="5" fill="#4A8DAC"></rect><circle cx="262.5" cy="10" r="7.5" fill="#4A8DAC"></circle></svg></div></div>
+    <div class="number"><span id="odLevelDisp" nexus-ui="" style="width: 55px; height: 30px;"><input type="text" style="width: 55px; height: 30px; background-color: rgb(153, 206, 212); color: rgb(51, 51, 51); font-family: arial; font-weight: 500; font-size: 15px; border: none; outline: none; padding: 7.5px; box-sizing: border-box; cursor: pointer;"></span></div>
+  </section>
+</div>
+<script>
+  var bindOverdriveEffectToInterface = function (afxPlugins) {
+    Nexus.colors.accent = "#4A8DAC",Nexus.colors.fill = "#99CED4";
+    var afxP = afxPlugins.find(function (plugin) { return plugin.node.uniqueID == "RTSFXoverdrive" }).node;
+    // Initialise overdrive controls
+    var sliderSize=[270, 20],boxSize=[55,30];
+    createNexusSlider('#odDriveInput',"drive",afxP,'#odDriveDisp',sliderSize,boxSize);
+    createNexusSlider('#odToneInput',"tone",afxP,'#odToneDisp',sliderSize,boxSize);
+    createNexusSlider('#odKneeInput',"knee",afxP,'#odKneeDisp',sliderSize,boxSize);
+    createNexusSlider('#odBiasInput',"bias",afxP,'#odBiasDisp',sliderSize,boxSize);
+    createNexusSlider('#odLevelInput',"level",afxP,'#odLevelDisp',sliderSize,boxSize);
+    bindElementToAudioParamNexus(distBypass,"bypass",afxP);
+  };
+</script>
+</div>
+            </div>
+        </div>
+        <div id="compressor" class="tabcontent" style="display:none">
+            <div class="effect-holder">
+                <div id="compressor-control"><!-- Compressor interface -->
+<div class="effect-container">
+    <section style="background-color: var(--c2); border-radius: 10px; width: auto;">
+        <div class="effect-header"><h3 class="effect-title">Compressor</h3></div>
+        <div class="label"><label class="effectLabel">Threshold</label></div>
+        <div class="slider"><div id="compThresInput" onmouseover="toolsdisplayInfo(this);" onmouseout="hideInfo()" nexus-ui="" style="width: 270px; height: 20px;"><svg width="270" height="20" style="cursor: pointer;"><rect x="0" y="10" transform="translate(0,-5)" rx="5" ry="5" width="270" height="10" fill="#99CED4"></rect><rect x="0" y="10" width="211.5" height="10" transform="translate(0,-5)" rx="5" ry="5" fill="#4A8DAC"></rect><circle cx="211.5" cy="10" r="7.5" fill="#4A8DAC"></circle></svg></div></div>
+        <div class="number"><span id="compThresDisp" nexus-ui="" style="width: 55px; height: 30px;"><input type="text" style="width: 55px; height: 30px; background-color: rgb(153, 206, 212); color: rgb(51, 51, 51); font-family: arial; font-weight: 500; font-size: 15px; border: none; outline: none; padding: 7.5px; box-sizing: border-box; cursor: pointer;"></span></div>
+        <div class="label"><label class="effectLabel">Knee</label></div>
+        <div class="slider"><div id="compKneeInput" onmouseover="toolsdisplayInfo(this);" onmouseout="hideInfo()" nexus-ui="" style="width: 270px; height: 20px;"><svg width="270" height="20" style="cursor: pointer;"><rect x="0" y="10" transform="translate(0,-5)" rx="5" ry="5" width="270" height="10" fill="#99CED4"></rect><rect x="0" y="10" width="135" height="10" transform="translate(0,-5)" rx="5" ry="5" fill="#4A8DAC"></rect><circle cx="135" cy="10" r="7.5" fill="#4A8DAC"></circle></svg></div></div>
+        <div class="number"><span id="compKneeDisp" nexus-ui="" style="width: 55px; height: 30px;"><input type="text" style="width: 55px; height: 30px; background-color: rgb(153, 206, 212); color: rgb(51, 51, 51); font-family: arial; font-weight: 500; font-size: 15px; border: none; outline: none; padding: 7.5px; box-sizing: border-box; cursor: pointer;"></span></div>
+        <div class="label"><label class="effectLabel">Ratio</label></div>
+        <div class="slider"><div id="compRatioInput" onmouseover="toolsdisplayInfo(this);" onmouseout="hideInfo()" nexus-ui="" style="width: 270px; height: 20px;"><svg width="270" height="20" style="cursor: pointer;"><rect x="0" y="10" transform="translate(0,-5)" rx="5" ry="5" width="270" height="10" fill="#99CED4"></rect><rect x="0" y="10" width="155.13157894736844" height="10" transform="translate(0,-5)" rx="5" ry="5" fill="#4A8DAC"></rect><circle cx="155.13157894736844" cy="10" r="7.5" fill="#4A8DAC"></circle></svg></div></div>
+        <div class="number"><span id="compRatioDisp" nexus-ui="" style="width: 55px; height: 30px;"><input type="text" style="width: 55px; height: 30px; background-color: rgb(153, 206, 212); color: rgb(51, 51, 51); font-family: arial; font-weight: 500; font-size: 15px; border: none; outline: none; padding: 7.5px; box-sizing: border-box; cursor: pointer;"></span></div>
+        <div class="label"><label class="effectLabel">Reduction</label></div>
+        <div class="slider"><div id="compReductionInput" onmouseover="toolsdisplayInfo(this);" onmouseout="hideInfo()" nexus-ui="" style="width: 270px; height: 20px;"><svg width="270" height="20" style="cursor: pointer;"><rect x="0" y="10" transform="translate(0,-5)" rx="5" ry="5" width="270" height="10" fill="#99CED4"></rect><rect x="0" y="10" width="262.5" height="10" transform="translate(0,-5)" rx="5" ry="5" fill="#4A8DAC"></rect><circle cx="262.5" cy="10" r="7.5" fill="#4A8DAC"></circle></svg></div></div>
+        <div class="number"><span id="compReductionDisp" nexus-ui="" style="width: 55px; height: 30px;"><input type="text" style="width: 55px; height: 30px; background-color: rgb(153, 206, 212); color: rgb(51, 51, 51); font-family: arial; font-weight: 500; font-size: 15px; border: none; outline: none; padding: 7.5px; box-sizing: border-box; cursor: pointer;"></span></div>
+        <div class="label"><label class="effectLabel">Attack</label></div>
+        <div class="slider"><div id="compAttackInput" onmouseover="toolsdisplayInfo(this);" onmouseout="hideInfo()" nexus-ui="" style="width: 270px; height: 20px;"><svg width="270" height="20" style="cursor: pointer;"><rect x="0" y="10" transform="translate(0,-5)" rx="5" ry="5" width="270" height="10" fill="#99CED4"></rect><rect x="0" y="10" width="8.265" height="10" transform="translate(0,-5)" rx="5" ry="5" fill="#4A8DAC"></rect><circle cx="8.265" cy="10" r="7.5" fill="#4A8DAC"></circle></svg></div></div>
+        <div class="number"><span id="compAttackDisp" nexus-ui="" style="width: 55px; height: 30px;"><input type="text" style="width: 55px; height: 30px; background-color: rgb(153, 206, 212); color: rgb(51, 51, 51); font-family: arial; font-weight: 500; font-size: 15px; border: none; outline: none; padding: 7.5px; box-sizing: border-box; cursor: pointer;"></span></div>
+        <div class="label"><label class="effectLabel">Release</label></div>
+        <div class="slider"><div id="compReleaseInput" onmouseover="toolsdisplayInfo(this);" onmouseout="hideInfo()" nexus-ui="" style="width: 270px; height: 20px;"><svg width="270" height="20" style="cursor: pointer;"><rect x="0" y="10" transform="translate(0,-5)" rx="5" ry="5" width="270" height="10" fill="#99CED4"></rect><rect x="0" y="10" width="135" height="10" transform="translate(0,-5)" rx="5" ry="5" fill="#4A8DAC"></rect><circle cx="135" cy="10" r="7.5" fill="#4A8DAC"></circle></svg></div></div>
+        <div class="number"><span id="compReleaseDisp" nexus-ui="" style="width: 55px; height: 30px;"><input type="text" style="width: 55px; height: 30px; background-color: rgb(153, 206, 212); color: rgb(51, 51, 51); font-family: arial; font-weight: 500; font-size: 15px; border: none; outline: none; padding: 7.5px; box-sizing: border-box; cursor: pointer;"></span></div>
+    </section>
+</div>
+<script>
+	var bindCompressorEffectToInterface = function (afxPlugins) {
+        Nexus.colors.accent = "#4A8DAC",Nexus.colors.fill = "#99CED4";
+        var afxP = afxPlugins.find(function (plugin) { return plugin.node.uniqueID == "RTSFXcompressor" }).node;
+        var sliderSize=[270, 20], boxSize=[55,30];
+        createNexusSlider('#compThresInput',"thres",afxP,'#compThresDisp',sliderSize,boxSize);
+        createNexusSlider('#compKneeInput',"knee",afxP,'#compKneeDisp',sliderSize,boxSize);
+        createNexusSlider('#compRatioInput',"ratio",afxP,'#compRatioDisp',sliderSize,boxSize);
+        createNexusSlider('#compReductionInput',"reduction",afxP,'#compReductionDisp',sliderSize,boxSize);
+        createNexusSlider('#compAttackInput',"attack",afxP,'#compAttackDisp',sliderSize,boxSize);
+        createNexusSlider('#compReleaseInput',"release",afxP,'#compReleaseDisp',sliderSize,boxSize);
+        bindElementToAudioParamNexus(compBypass,"bypass",afxP);
+	}
+</script>
+</div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="tlsModal" class="tls-modal" style="display: none;">
+    <div class="tls-modal-content">
+        <div class="tab-bar" id="tlsModal-header">
+            <button class="tablink" id="random-focus" onclick="toolsTab(event,&#39;randomisation-content&#39;)">Random</button>
+            <button class="tablink" id="trigger-focus" onclick="toolsTab(event,&#39;trigger-content&#39;)">Trigger</button>
+            <button class="tablink" id="spatialisation-focus" onclick="toolsTab(event,&#39;spatialisation-content&#39;)">Spatialisation</button>
+            <span class="close" id="tlsClose">×</span>
+        </div>
+        <div id="randomisation-content" class="tabcontent" style="display: block;">
+            <div class="tools-holder">
+                <div id="randomisation"><div class="col-md-12 col-lg-12">
+  <div class="row" align="center">
+    <div id="buttonRandomise" onmouseover="toolsdisplayInfo(this);" onmouseout="hideInfo()" nexus-ui="" style="width: 150px; height: 50px;"><div style="border-radius: 10px; background-color: rgb(102, 185, 191); color: rgb(255, 255, 255); cursor: pointer;"><div style="border-radius: 10px; width: 150px; height: 50px; box-sizing: border-box; display: table-cell; vertical-align: middle; text-align: center; font-family: inherit; font-weight: 500; opacity: 1; font-size: 13.6364px; color: rgb(255, 255, 255);">Randomise</div></div></div>
+    <br>
+  </div>
+  <div class="row" align="center">
+    <label class="controlLabel">Ctrl-Cmd + Click to select sliders</label>
+    <br>
+    <select id="selectParameterToRandomise" onmouseover="toolsdisplayInfo(this);" onmouseout="hideInfo()" style="width: 30%; height: 9vh; float: center; margin-top: 0;" multiple=""><option value="gainInputNexus">Noise Gain</option><option value="gainAttackInputNexus">Gain Attack</option><option value="gainReleaseInputNexus">Gain Release</option><option value="startFilterFreqInputNexus">Start Frequency</option><option value="peakFilterFreqInputNexus">Peak Frequency</option><option value="endFilterFreqInputNexus">End Frequency</option><option value="filterQInputNexus">Filter Q</option><option value="gainAttackInputNexus">Frequency Attack</option><option value="freqReleaseInputNexus">Frequency Release</option></select>
+  </div>
+  <br>
+  <div class="row" align="center">
+    <label class="controlLabel">Random Threshold as Slider Percentage &nbsp; </label>
+    <table style="display: flex; justify-content: center;">
+      <tbody><tr>
+        <td><div id="sliderRandomPercentInput" onmouseover="toolsdisplayInfo(this);" onmouseout="hideInfo()" nexus-ui="" style="width: 400px; height: 20px;"><svg width="400" height="20" style="cursor: pointer;"><rect x="0" y="10" transform="translate(0,-5)" rx="5" ry="5" width="400" height="10" fill="#66B9BF"></rect><rect x="0" y="10" width="26.75" height="10" transform="translate(0,-5)" rx="5" ry="5" fill="#07889B"></rect><circle cx="26.75" cy="10" r="7.5" fill="#07889B"></circle></svg></div></td>
+        <td><div style="background-color: #66B9BF; color: white;"><span id="numberBoxRandomPercentInput" nexus-ui="" style="width: 40px; height: 30px;"><input type="text" style="width: 40px; height: 30px; background-color: rgb(102, 185, 191); color: rgb(255, 255, 255); font-family: arial; font-weight: 500; font-size: 15px; border: none; outline: none; padding: 7.5px; box-sizing: border-box; cursor: pointer;"></span><b>%</b></div></td>
+      </tr>
+    </tbody></table>
+  </div>
+  <br>
+  <!-- <p align="center"> The percentage defines the threshold around the last sliders input. <br>
+    The last sliders input is the median reference point for the random range.</p> -->
+</div>
+<script>
+  Nexus.colors.accent = "#07889B",Nexus.colors.fill = "#66B9BF",Nexus.colors.dark = "#FFFFFF";
+  window.buttonRandomise= new Nexus.TextButton('#buttonRandomise',{'size': [150,50],'text': 'Randomise','state':false})
+  buttonRandomise.textElement.style.fontWeight="500";
+  var sliderRandomPercentInput = new Nexus.Slider('#sliderRandomPercentInput',{'size':[400,20],'mode':'absolute','min':0,'max':100,'step':1,'value':5});
+  var numberBoxRandomPercentInput = new Nexus.Number('#numberBoxRandomPercentInput',{'size':[40,30]})
+  numberBoxRandomPercentInput.link(sliderRandomPercentInput);
+</script>
+</div>
+            </div>
+        </div>
+        <div id="trigger-content" class="tabcontent" style="display: none;">
+            <div class="tools-holder">
+                <div id="trigger"><script src="./Whoosh_files/NexusUI2.js"></script>
+<style> p { word-spacing: 30px;} </style>
+<div class="popup" onclick="popupTrigger()">
+  <img src="./Whoosh_files/tutorial.png" style="width:40px;height:40px;vertical-align:middle;margin-bottom: 10px;">
+  <div class="popuptutorial" id="popupTrigger">
+    <font size="4" align="left">
+      <b>How to use the Trigger Functionality</b><br>
+      -Select a sound source (model buttons or presets) from the list<br>
+      -Choose sequence size and time unit using the respective sliders<br>
+      -Click on the sequencer to select the times when the sound should trigger<br>
+      -Press the + button to add a new sequencer for the next sound source.<br>
+      -Finally, press trigger to activate sequencer.
+    </font>
+  </div>
+</div>
+<div>
+  <table style="display: flex; justify-content: center;">
+    <tbody><tr style="width: 100%; display: flex; justify-content: flex-start;">
+      <td style="margin: 10px"><label class="controlLabel" for="time">Length</label><div id="dtime" onmouseover="toolsdisplayInfo(this);" onmouseout="hideInfo()" nexus-ui="" style="width: 150px; height: 20px;"><svg width="150" height="20" style="cursor: pointer;"><rect x="0" y="10" transform="translate(0,-5)" rx="5" ry="5" width="150" height="10" fill="#66B9BF"></rect><rect x="0" y="10" width="7.5" height="10" transform="translate(0,-5)" rx="5" ry="5" fill="#07889B"></rect><circle cx="7.5" cy="10" r="7.5" fill="#07889B"></circle></svg></div><span id="number1" nexus-ui="" style="width: 40px; height: 30px;"><input type="text" style="width: 40px; height: 30px; background-color: rgb(102, 185, 191); color: rgb(255, 255, 255); font-family: arial; font-weight: 500; font-size: 15px; border: none; outline: none; padding: 7.5px; box-sizing: border-box; cursor: pointer;"></span></td>
+      <td style="margin: 10px"><label class="controlLabel" for="unit">Unit(s)</label><div id="dunit" onmouseover="toolsdisplayInfo(this);" onmouseout="hideInfo()" nexus-ui="" style="width: 150px; height: 20px;"><svg width="150" height="20" style="cursor: pointer;"><rect x="0" y="10" transform="translate(0,-5)" rx="5" ry="5" width="150" height="10" fill="#66B9BF"></rect><rect x="0" y="10" width="71.44736842105263" height="10" transform="translate(0,-5)" rx="5" ry="5" fill="#07889B"></rect><circle cx="71.44736842105263" cy="10" r="7.5" fill="#07889B"></circle></svg></div><span id="number2" nexus-ui="" style="width: 45px; height: 30px;"><input type="text" style="width: 45px; height: 30px; background-color: rgb(102, 185, 191); color: rgb(255, 255, 255); font-family: arial; font-weight: 500; font-size: 15px; border: none; outline: none; padding: 7.5px; box-sizing: border-box; cursor: pointer;"></span></td>
+      <td style="margin: 10px"><label class="controlLabel" for="dtrigger">Start</label><div id="dtrigger" onmouseover="toolsdisplayInfo(this);" onmouseout="hideInfo()" nexus-ui="" style="width: 80px; height: 40px;"><div style="border-radius: 10px; background-color: rgb(102, 185, 191); color: rgb(255, 255, 255); cursor: pointer;"><div style="border-radius: 10px; width: 80px; height: 40px; box-sizing: border-box; display: table-cell; vertical-align: middle; text-align: center; font-family: inherit; font-weight: 500; opacity: 1; font-size: 8.88889px; color: rgb(255, 255, 255);">Trigger</div></div></div></td>
+    </tr>
+    </tbody></table>
+    <br>
+    <table id="sequencer" class="" style="width:100%;margin-bottom: 10px;">
+      <tbody><tr>
+        <td style="display:flex; justify-content: center;">
+        </td>
+      </tr>
+      <tr>
+        <td style="display: flex; justify-content: center;">
+          <div id="addSeq" onmouseover="toolsdisplayInfo(this);" onmouseout="hideInfo()" nexus-ui="" style="width: 40px; height: 40px;"><div style="border-radius: 10px; background-color: rgb(102, 185, 191); color: rgb(255, 255, 255); cursor: pointer;"><div style="border-radius: 10px; width: 40px; height: 40px; box-sizing: border-box; display: table-cell; vertical-align: middle; text-align: center; font-family: inherit; font-weight: 500; opacity: 1; font-size: 15px; color: rgb(255, 255, 255); padding-top: 10px;">+</div></div></div><div id="deleteSeq" onmouseover="toolsdisplayInfo(this);" onmouseout="hideInfo()" nexus-ui="" style="width: 40px; height: 40px;"><div style="border-radius: 10px; background-color: rgb(128, 128, 128); color: rgb(255, 255, 255); cursor: pointer;"><div style="border-radius: 10px; width: 40px; height: 40px; box-sizing: border-box; display: table-cell; vertical-align: middle; text-align: center; font-family: inherit; font-weight: 500; opacity: 1; font-size: 15px; color: rgb(255, 255, 255); padding-top: 10px;">-</div></div></div>
+        </td>
+      </tr>
+    </tbody><label class="controlLabel" style="display:flex; justify-content: center;">press + to add a sequencer, select what to trigger and trigger it</label></table>
+</div>
+<script>
+  let keyVal = ["C","C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B","C2","C#2", "D2", "D#2", "E2", "F2", "F#2", "G2", "G#2", "A2", "A#2", "B2", "C3","C#3", "D3", "D#3", "E3", "F3", "F#3", "G3", "G#3", "A3", "A#3", "B3", "C4","C#4", "D4", "D#4", "E4", "F4", "F#4", "G4", "G#4", "A4", "A#4", "B4"]
+  let keyIndex = [];
+  let xcontext = new AudioContext();
+  function popupTrigger() {
+    var popup = document.getElementById("popupTrigger");
+    popup.classList.toggle("show");
+  }
+  Nexus.colors.accent = "#07889B",Nexus.colors.fill = "#66B9BF",Nexus.colors.dark = "#FFFFFF";
+  var scale=1;
+  var flag=true;
+  var counters= 0;
+  var count = -1;
+  var seqObjects = [];
+  var seqs=[];
+  var selectNames=[];
+  var triggerButtons=[];
+  var Sequencing= [];
+  var currentSeq;
+  var currentSel;
+  var event = new Event('change');
+  var addSeq= new Nexus.TextButton('#addSeq',{'size':[40,40],'text':"+",'mode':'impulse','state':false})
+    addSeq.textElement.style.paddingTop="10px";
+    addSeq.textElement.style.fontSize="15px";
+    addSeq.textElement.style.fontWeight="500";
+  var label1 = document.createElement("label");
+    label1.textContent = "press + to add a sequencer, select what to trigger and trigger it";
+    label1.className = "controlLabel";
+    label1.setAttribute("style", "display:flex; justify-content: center;")
+    sequencer.appendChild(label1)
+  var deleteSeq= new Nexus.TextButton('#deleteSeq',{'size':[40,40],'text':"-",'mode':'impulse','state':false})
+    deleteSeq.textElement.style.paddingTop="10px";
+    deleteSeq.textElement.style.fontSize="15px";
+    deleteSeq.textElement.style.fontWeight="500";
+    deleteSeq.colorize("fill","#808080")
+  var seqCounter=-1;
+  addSeq.on('change',function(data){if(data) createSeq();}); //Add new sequencer
+  deleteSeq.on('change', function(data){if(data) removeSeq();});
+  function setButtonName(){ for(i=0;i<selectNames.length;i++) triggerButtons[i]=document.getElementById(selectNames[i]).value; }
+  function StopSequencing()
+  {
+    for (i=0;i<seqObjects.length;i++)
+    {
+        clearInterval(Sequencing[i]);
+        seqObjects[i].stop();
+    }
+  }
+  function removeSeq()
+  {
+    if(seqCounter >= 0)
+    {
+      StopSequencing();
+      seqObjects[seqCounter].destroy();
+      var remtd1 = document.getElementById(`td1${seqCounter}`)
+      var remtd2 = document.getElementById(`td2${seqCounter}`)
+      var remtr1 = document.getElementById(`tr1${seqCounter}`)
+      var remtr2 = document.getElementById(`tr2${seqCounter}`)
+      remtd1.remove();
+      remtd2.remove();
+      remtr1.remove();
+      remtr2.remove();
+      seqObjects.splice(seqCounter,1);
+      triggerButtons.splice(seqCounter,1);
+      seqCounter--;
+    }
+    if(seqCounter < 0)
+    {
+      deleteSeq.colorize("fill","#808080")
+    }
+  }
+  function createSeq()
+  {
+    deleteSeq.colorize("fill","#99ced4")
+    seqCounter++;
+     // Now create and append to iDiv
+    var innerDiv = document.createElement('div');
+    var seqName=`Seqs${seqCounter}`;
+    var nexusName=`seq${seqCounter}`;
+    innerDiv.id = seqName;
+    innerDiv.className="sequencers";
+    innerDiv.setAttribute("onmouseover", "toolsdisplayInfo(this)");
+    innerDiv.setAttribute("onmouseout", "hideInfo()");
+    var form = document.createElement("form");
+    var newSelect = document.createElement("select");
+    newSelect.id=`mySelect${seqCounter}`;
+    newSelect.className="triggerSelects";
+    selectNames[seqCounter]=newSelect.id;
+    newSelect.setAttribute("onchange", "setButtonName()");
+    newSelect.setAttribute("style", "height:30px;font-size:14px;");
+    newSelect.setAttribute("onmouseover", "toolsdisplayInfo(this)");
+    newSelect.setAttribute("onmouseout", "hideInfo()");
+    currentSeq = innerDiv;
+    currentSel = newSelect;
+    var tr1 = document.createElement("tr");
+    tr1.id = `tr1${seqCounter}`;
+    var tr2 = document.createElement("tr");
+    tr2.id = `tr2${seqCounter}`;
+    var td1 = document.createElement("td");
+    td1.id = `td1${seqCounter}`;
+    td1.setAttribute("style", "display:flex; justify-content: center;")
+    var td2 = document.createElement("td");
+    td2.id = `td2${seqCounter}`;
+    td2.style = "display: flex; justify-content: center;";
+    //Select trigger times
+//    innerDiv.innerHTML += "<>";
+    form.appendChild(newSelect);
+    td1.appendChild(newSelect);
+    td2.appendChild(innerDiv);
+    tr1.appendChild(td1);
+    tr2.appendChild(td2);
+    sequencer.appendChild(tr1);
+    sequencer.appendChild(tr2);
+    populateTriggers();
+    triggerButtons[seqCounter]=document.getElementById(`mySelect${seqCounter}`).value;
+    seqName = new Nexus.Sequencer(`#Seqs${seqCounter}`,{'size':[400,25],'mode': 'toggle','rows': 1,'columns': 10})
+    seqName.colors.mediumLight="#666";
+    seqName.columns=time.value;
+    seqName.resize(400+((time.value -10)*15),25);
+    seqObjects.push(seqName);
+    var localSeq=seqCounter;
+    seqObjects[localSeq].on('step',function(data) {
+      if (data==1)
+      {
+        if(Elements[triggerButtons[localSeq]].id == "pianoroll")
+        {
+          var selects=document.getElementsByClassName("triggerSelects");
+          keyIndex[localSeq] = keyVal.indexOf(selects[localSeq].options[selects[localSeq].selectedIndex].innerHTML,0)
+          piano.keys[keyIndex[localSeq]].click();
+        }
+        else if(Elements[triggerButtons[localSeq]] != undefined) Elements[triggerButtons[localSeq]].click();
+        else if (document.getElementById(triggerButtons[localSeq]) != undefined && document.getElementById(triggerButtons[localSeq]).tagName == "BUTTON"){
+        document.getElementById(triggerButtons[localSeq]).click();
+        }
+      }
+      if(counters==seqObjects[localSeq].columns)
+      {
+        if(!flag)
+        {
+          counters = counters % seqObjects[localSeq].columns;
+        }
+      }
+      if(count == seqCounter)
+      {
+        counters++;
+      }
+    })
+    seqObjects[localSeq].start();
+    seqObjects[localSeq].stop();
+  }
+
+
+  var trigger = new Nexus.TextButton('#dtrigger',{'size': [80,40],'text': "Trigger", 'state':false})
+  trigger.alternateText="Stop";
+  trigger.on('change',function(v)
+  {
+      if(trigger.state)
+          {
+            if(flag)
+            {
+            if(seqCounter >= 0 )
+            {
+            for (let i=0;i<seqObjects.length;i++)
+            {
+              seqObjects[i].stepper.value=-1;
+              Sequencing[i]=setInterval(() =>
+              {
+                count = (count+1)%seqObjects.length;
+                seqObjects[i].start();
+                seqObjects[i].stop();
+              },scale*1000);
+            }
+          }
+          flag = false;
+          }
+          }
+      if(!trigger.state)
+          {
+          if(!flag)
+          {
+            if(seqCounter >= 0 )
+            {
+              StopSequencing();
+              for (i=0;i<seqObjects.length;i++)
+              {
+                seqObjects[i].stepper.value=-1;
+                counters= 0;
+              }
+            }
+            if(seqCounter<0)
+            {
+          if(!flag)
+          {
+            window.alert("Click and open Trigger and add a sequencer to enable triggers");
+            StopSequencing();
+          }
+        }
+          flag = true;
+          }
+        }
+  });
+  var time = new Nexus.Slider('#dtime',{'size':[150,20],'mode':'relative','min':10,'max':60,'step':2,'value':10})
+  time.on('change',function(data){
+    for(s=0;s<seqObjects.length;s++){
+      for(i=0;i<seqObjects[s].columns;i++) seqObjects[s].matrix.pattern[0][i]=false;
+      seqObjects[s].columns=data;
+      seqObjects[s].resize(400+((data -10)*15),25);
+    }
+  })
+  var number1 = new Nexus.Number('#number1',{'size':[40,30]});
+  number1.link(time);
+  var unit = new Nexus.Slider('#dunit',{'size':[150,20],'mode':'relative','min':0.05,'max':1,'step':0.05,'value':0.5})
+  unit.on('change',function(data){ scale=data; })
+  var number2 = new Nexus.Number('#number2',{'size':[45,30]});
+  number2.link(unit);
+  var Elements;
+//  populateTriggers();
+  function populateTriggers(){
+    var selects=document.getElementsByClassName("triggerSelects");
+    var labels = document.getElementsByTagName('label');
+    Elements = getNexusElements();
+    var nexusNames = Object.keys(getNexusElements());
+    for(var nexusId in nexusNames) {
+      var Name = nexusNames[nexusId];
+      if ((Elements[Name].type=="Button" || Elements[Name].type=="TextButton" || Elements[Name].type=="Toggle") && (Elements[Name].parameter && Elements[Name].parameter.plugin.id==0))
+      {
+        var label=0;
+        if (Elements[Name].text) { label=Elements[Name].text; }
+        else {
+          for (var labelIndex in labels) {
+            if (Name==labels[labelIndex].htmlFor) label=labels[labelIndex].innerHTML;
+          }
+        }
+        if (label==0) label=Name;
+        $(selects[seqCounter]).append("<option value=\""+Name+"\">"+label+"</option>");
+      }
+      else if (Name == "pianoroll")
+      {
+        //let piano = document.getElementById("pianoroll")
+        let numKeys = piano.keys.length;
+        for(var i = 1; i<=numKeys; i++)
+        {
+          let keyLabel = keyVal[i-1];
+          $(selects[seqCounter]).append("<option value=\""+Name+"\">"+keyLabel+"</option>");
+        }
+      }
+    }
+  }
+</script>
+</div>
+            </div>
+        </div>
+        <div id="spatialisation-content" class="tabcontent" style="display:none">
+            <div class="spatialisation-holder">
+              <br>
+                <div class="fxBypass" id="spatSwitch" nexus-ui="" style="width: 40px; height: 20px;"><svg width="40" height="20" style="cursor: pointer;"><rect x="5" y="5" rx="5" ry="5" width="30" height="10" fill="#367C66"></rect><circle cx="10" cy="10" r="10" fill="#59C9A5"></circle></svg></div>
+                <div id="spatialisation"><script src="./Whoosh_files/NexusUI2.js"></script>
+<style>
+p {
+    word-spacing: 30px;
+}
+</style>
+<div class="popup" onclick="popupSpatial()">
+  <img src="./Whoosh_files/tutorial.png" style="width:40px;height:40px;vertical-align:middle">
+  <div class="popuptutorial" id="popupSpatial">
+    <font size="4" align="left">
+      <b>How to use 3D Spatialisation</b><br>
+      -Height and Width can be used to adjust the room dimensions.<br>
+      -The 2 dimentional slider can be used to place the sound source on X axis (left or Right) and Y axis (Above or Below)with respect to the listener.<br>
+      -The last slider is used to place the sound source on Z axis with respect to the listener. Red dot indicates behind and Blue indicates in front.
+    </font>
+  </div>
+</div>
+<script>
+  function popupSpatial() {
+    var popup = document.getElementById("popupSpatial");
+    popup.classList.toggle("show");
+  }
+</script>
+  <div class="row" align="center" style="margin-bottom: 10px;">
+  <h3>Room size</h3>
+        <label class="controlLabel">Width</label>
+  <table>
+    <tbody><tr>
+      <td style="display: flex; justify-content: center;">
+        <div id="xSlider" onmouseover="toolsdisplayInfo(this);" onmouseout="hideInfo()" nexus-ui="" style="width: 300px; height: 15px;"><svg width="300" height="15" style="cursor: pointer;"><rect x="0" y="7.5" transform="translate(0,-3.75)" rx="3.75" ry="3.75" width="300" height="7.5" fill="#66B9BF"></rect><rect x="0" y="7.5" width="63.375" height="7.5" transform="translate(0,-3.75)" rx="3.75" ry="3.75" fill="#07889B"></rect><circle cx="63.375" cy="7.5" r="5.625" fill="#07889B"></circle></svg></div><div id="xDisp" nexus-ui="" style="width: 40px; height: 25px;"><input type="text" style="width: 40px; height: 25px; background-color: rgb(102, 185, 191); color: rgb(255, 255, 255); font-family: arial; font-weight: 500; font-size: 12.5px; border: none; outline: none; padding: 6.25px; box-sizing: border-box; cursor: pointer;"></div>
+      </td>
+      </tr>
+    </tbody></table>
+    <label class="controlLabel">Height</label>
+    <table>
+      <tbody><tr>
+        <td style="display: flex; justify-content: center;">
+          <div id="ySlider" onmouseover="toolsdisplayInfo(this);" onmouseout="hideInfo()" nexus-ui="" style="width: 300px; height: 15px;"><svg width="300" height="15" style="cursor: pointer;"><rect x="0" y="7.5" transform="translate(0,-3.75)" rx="3.75" ry="3.75" width="300" height="7.5" fill="#66B9BF"></rect><rect x="0" y="7.5" width="63.375" height="7.5" transform="translate(0,-3.75)" rx="3.75" ry="3.75" fill="#07889B"></rect><circle cx="63.375" cy="7.5" r="5.625" fill="#07889B"></circle></svg></div><div id="yDisp" nexus-ui="" style="width: 40px; height: 25px;"><input type="text" style="width: 40px; height: 25px; background-color: rgb(102, 185, 191); color: rgb(255, 255, 255); font-family: arial; font-weight: 500; font-size: 12.5px; border: none; outline: none; padding: 6.25px; box-sizing: border-box; cursor: pointer;"></div>
+        </td>
+      </tr>
+  </tbody></table>
+  </div>
+  <div class="row" align="center">
+    <table style="margin-bottom: 15px;">
+      <tbody><tr>
+        <td align="center">
+          <div style="width: 35px; height: 20px;" id="positionDispY" nexus-ui=""><input type="text" style="width: 35px; height: 20px; background-color: rgb(102, 185, 191); color: rgb(255, 255, 255); font-family: arial; font-weight: 500; font-size: 10px; border: none; outline: none; padding: 5px; box-sizing: border-box; cursor: pointer;"></div><div id="positionDispX" nexus-ui="" style="width: 35px; height: 20px;"><input type="text" style="width: 35px; height: 20px; background-color: rgb(102, 185, 191); color: rgb(255, 255, 255); font-family: arial; font-weight: 500; font-size: 10px; border: none; outline: none; padding: 5px; box-sizing: border-box; cursor: pointer;"></div>
+          <div style="margin-bottom: 15px; width: 200px; height: 200px;" id="xyPosition" onmouseover="toolsdisplayInfo(this);" onmouseout="hideInfo()" nexus-ui=""><svg width="200" height="200" style="background-color: rgb(102, 185, 191); cursor: pointer;"><circle cx="100" cy="100" r="10" fill="#337AB7"></circle></svg></div>
+        </td>
+      </tr>
+    </tbody></table>
+    <div id="resetPosition" onmouseover="toolsdisplayInfo(this);" onmouseout="hideInfo()" nexus-ui="" style="width: 150px; height: 40px;"><div style="border-radius: 10px; background-color: rgb(102, 185, 191); color: rgb(255, 255, 255); cursor: pointer;"><div style="border-radius: 10px; width: 150px; height: 40px; box-sizing: border-box; display: table-cell; vertical-align: middle; text-align: center; font-family: inherit; font-weight: 500; opacity: 1; font-size: 9.375px; color: rgb(255, 255, 255);">Reset Position</div></div></div>
+    <label class="controlLabel">Source position along the room: Back / Front</label>
+    <table>
+      <tbody><tr>
+        <td style="display: flex; justify-content: center;">
+          <div id="zSlider" onmouseover="toolsdisplayInfo(this);" onmouseout="hideInfo()" nexus-ui="" style="width: 300px; height: 15px;"><svg width="300" height="15" style="cursor: pointer;"><rect x="0" y="7.5" transform="translate(0,-3.75)" rx="3.75" ry="3.75" width="300" height="7.5" fill="#66B9BF"></rect><rect x="0" y="7.5" width="150" height="7.5" transform="translate(0,-3.75)" rx="3.75" ry="3.75" fill="#07889B"></rect><circle cx="150" cy="7.5" r="5.625" fill="#07889B"></circle></svg></div><div id="zDisp" nexus-ui="" style="width: 40px; height: 25px;"><input type="text" style="width: 40px; height: 25px; background-color: rgb(102, 185, 191); color: rgb(255, 255, 255); font-family: arial; font-weight: 500; font-size: 12.5px; border: none; outline: none; padding: 6.25px; box-sizing: border-box; cursor: pointer;"></div>
+        </td>
+      </tr>
+    </tbody></table>
+  </div>
+<script>
+  var bindSpatialisationEffectToInterface = function (afxPlugins) {
+    Nexus.colors.accent = "#07889B",Nexus.colors.fill = "#66B9BF",Nexus.colors.dark = "#FFFFFF";
+    var positionDispX = new Nexus.Number('#positionDispX',{'size': [35,20],'min': -1,'max':1,'step': 0.01})
+    var positionDispY = new Nexus.Number('#positionDispY',{'size':[35, 20],'min': -1,'max': 1,'step': 0.01})
+    var resetPosition = new Nexus.TextButton('#resetPosition',{'size':[150, 40],'mode':'impulse','text':'Reset Position','state':false})
+    // Find spatialisation plugin
+    afxP = afxPlugins.find(function (plugin) { return plugin.node.uniqueID == "RTSFXspatialisation" }).node;
+    // Initialise spatialisation controls.
+    var sliderSize=[300, 15],boxSize=[40,25];
+    createNexusPosition('#xyPosition',"positionX","positionY",afxP,null,null,[200,200]);
+    createNexusSlider('#zSlider',"positionZ",afxP,'#zDisp',sliderSize,boxSize);
+    createNexusSlider('#xSlider',"distanceX",afxP,'#xDisp',sliderSize,boxSize);
+    createNexusSlider('#ySlider',"distanceY",afxP,'#yDisp',sliderSize,boxSize);
+    var knobVal=10;
+    xyPosition.knobRadius.off=knobVal;
+    xyPosition.knobRadius.on=xyPosition.knobRadius.off*1.5;
+    xyPosition.render();
+    xyPosition.on('change',function(data) {
+      positionDispX.value=2*data.x-1;
+      positionDispY.value=2*data.y-1;
+    })
+    xSlider.on('change',function(data) {
+      xyPosition.resize((data/20)*40,xyPosition.height);
+      xyPosition.render();
+    })
+    ySlider.on('change',function(data) {
+      xyPosition.resize(xyPosition.width,(data/20)*40);
+      xyPosition.render();
+    })
+    zSlider.on('change',function(data) {
+      xyPosition.knobRadius.off=Math.max(knobVal-(Math.abs(data)*10),1);
+      xyPosition.knobRadius.on=Math.max(xyPosition.knobRadius.off*1.5,2);
+      if(data.value<-0.01) xyPosition.colorize("accent","#B22222");
+      else xyPosition.colorize("accent","#337AB7");
+      xyPosition.render();
+    })
+    resetPosition.on('change',function(){
+      xyPosition.x=0.5,xyPosition.y=0.5;
+      xyPosition.position.x.value=0.5;
+      xyPosition.position.y.value=0.5;
+      zSlider.value=0;
+    })
+  }
+</script>
+</div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+<script>
+    var pluginDetails = {id: "RTSFXwhoosh",name:"Whoosh",path:"../jsap-plugins/sound-effects/WhooshPlugin.js",objName:"WhooshPlugin"}
+    var bindSoundPluginsToInterface = function (sfxPlugins) {
+      var sfxP = sfxPlugins[0].node;
+      // Initialise sound effect controls.
+      let sliderSize = [150,20],boxSize = [40,22],selectSize=[125,30];
+      var TriggerButton = createNexusTextButton('#gateButtonNexus',"gate_on",sfxP,'&#9654',[50, 35]);
+      createNexusSelect('#gainAttackTypeNexus',"env_attack_type", sfxP,['Linear','Exponential'],selectSize);
+      createNexusSelect('#gainReleaseTypeNexus',"env_release_type", sfxP,['Linear','Exponential'],selectSize);
+      createNexusSelect('#freqAttackTypeNexus',"filt_attack_type", sfxP,['Linear','Exponential'],selectSize);
+      createNexusSelect('#freqReleaseTypeNexus',"filt_release_type", sfxP,['Linear','Exponential'],selectSize);
+      createNexusSelect('#filterTypeNexus',"filt_type", sfxP,['Low Pass', 'Band Pass'],selectSize);
+      createNexusSlider('#gainInputNexus',"max_gain",sfxP,'#gainInputDisp',sliderSize,boxSize);
+      createNexusSlider('#gainAttackInputNexus',"env_attack",sfxP,'#gainAttackDisp',sliderSize,boxSize);
+      createNexusSlider('#gainReleaseInputNexus',"env_release",sfxP,'#gainReleaseDisp',sliderSize,boxSize);
+      createNexusSlider('#freqAttackInputNexus',"filt_attack",sfxP,'#freqAttackDisp',sliderSize,boxSize);
+      createNexusSlider('#freqReleaseInputNexus',"filt_release",sfxP,'#freqReleaseDisp',sliderSize,boxSize);
+      createNexusSlider('#startFilterFreqInputNexus',"start_f",sfxP,'#startFilterFreqDisp',sliderSize,boxSize);
+      createNexusSlider('#peakFilterFreqInputNexus',"peak_f",sfxP,'#peakFilterFreqDisp',sliderSize,boxSize);
+      createNexusSlider('#endFilterFreqInputNexus',"end_f",sfxP,'#endFilterFreqDisp',sliderSize,boxSize);
+      createNexusSlider('#filterQInputNexus',"Q",sfxP,'#filterQDisp',sliderSize,boxSize);
+      if (sfxPlugins[0].id in parametersObject[sfxP.uniqueID]) Object.assign(parametersObject[sfxP.uniqueID][sfxPlugins[0].id], getPluginParameterValues(sfxPlugins[0]));
+      TriggerButton.on('change', function(data) {
+          if (data && !AudioCtxOn) {
+              forceResumeCtx();
+          }
+      });
+      TriggerButton.textElement.style.fontSize = "16px";
+      TriggerButton.colorize('fill', "#FF5733");
+    };
+</script>
+<script src="./Whoosh_files/modelending.js"></script>
+<iframe name="__privateStripeMetricsController4450" frameborder="0" allowtransparency="true" scrolling="no" allow="payment *" src="./Whoosh_files/m-outer-fd3c67f2efa9f22f2ecd16b13f2a7fb3.html" aria-hidden="true" tabindex="-1" style="border: none !important; margin: 0px !important; padding: 0px !important; width: 1px !important; min-width: 100% !important; overflow: hidden !important; display: block !important; visibility: hidden !important; position: fixed !important; height: 1px !important; pointer-events: none !important; user-select: none !important;"></iframe><script>mendeleyWebImporter = {
+  downloadPdfs(e,t) { return this._call('downloadPdfs', [e,t]); },
+  open() { return this._call('open', []); },
+  setLoginToken(e) { return this._call('setLoginToken', [e]); },
+  _call(methodName, methodArgs) {
+    const id = Math.random();
+    window.postMessage({ id, token: '0.4699850232039562', methodName, methodArgs }, 'https://nemisindo.com');
+    return new Promise(resolve => {
+      const listener = window.addEventListener('message', event => {
+        const data = event.data;
+        if (typeof data !== 'object' || !('result' in data) || data.id !== id) return;
+        window.removeEventListener('message', listener);
+        resolve(data.result);
+      });
+    });
+  }
+};</script></body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>

@@ -1,0 +1,1171 @@
+@font-face {
+  font-family: LemonMilk;
+  src: url("../css/LEMONMILK-Regular.otf");
+}
+
+::-webkit-scrollbar {
+    display: none; /* Chrome Safari */
+}
+
+:root {
+    --c1: #002846;
+    --c2: #E9E9E9;
+    --c3: #0074cc;
+    --c4: #33a7ff;
+    --c5: #E9E9E9;
+    --c6: #cce9ff;
+    --c7: #F1F1F1;
+    --white: #FFFFFF;
+    --audio-effects: #A9B7C0;
+    --button-color: #E9B000;
+    --text-color: #17252A;
+    --button-alt-color: rgb(95, 95, 95);
+    --alt-bg-color:  #fbfbfb;
+    --avg-color: rgb(45, 90, 120);
+    --font: 'Work Sans', sans-serif;
+    --theme-color-1: #343a56;
+    --theme-color-2: #1A1313;
+    --theme-color-3: #226371;
+    --theme-color-4: #6acaa7;
+}
+
+html {
+    background-size: cover;
+}
+
+body {
+    height: 100vh;
+    max-width: 100%;
+    margin: 0 auto;
+    background-color: white;
+    overflow-x:hidden;
+    overflow-y:hidden;
+}
+
+.myHeader{
+    box-shadow: 0px -11px 10px 10px var(--header-color-2) !important;
+}
+
+/* Master Grid */
+.wrapper {
+    position: absolute;
+    top: 100px;
+    bottom: 0px;
+    color: var(--text-color);
+    /*height: 90vh;*/
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: 100%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-areas: "sidebar-left main sidebar-right";
+    grid-template-columns: 270px calc(100% - 550px) 270px;
+    /*grid-template-rows: 92.5vh;*/
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Model Area */
+main {
+    grid-area: main;
+    background: inherit;
+    display: grid;
+    grid-template-areas: "main-title main-title main-title" "main-top main-top main-top" "main-left main-center main-right";
+    grid-template-rows: 1fr minmax(20px, auto) 8fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    border-left: 1px solid #CDCDCD;
+    border-right: 1px solid #CDCDCD;
+}
+
+main h2{
+    font-family: LemonMilk;
+    font-size: 25px;
+    margin: 0 auto;
+}
+
+/*  Left Sidebar */
+sb-left {
+    grid-area: sidebar-left;
+    background-color: var(--alt-bg-color);
+    display: grid;
+    grid-template-rows: minmax(auto, 220px) auto;
+    border-color: var(--c1);
+}
+
+sb-left h3{
+    font-size: 18px;
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+    vertical-align: middle;
+}
+
+/*  Right Sidebar */
+sb-right {
+    grid-area: sidebar-right;
+    background-color: var(--alt-bg-color);
+    display: grid;
+    grid-template-rows: auto auto;
+    border-color: var(--c1);
+}
+
+sb-right h3{
+    font-size: 18px;
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+    vertical-align: middle;
+}
+
+
+/* Unused for now, might be worth keeping for later features */
+footer {
+    grid-area: footer;
+    width:100%;
+    height: 35px;
+    background-color: var(--header-color);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding-top: 0;
+    bottom:0;
+}
+
+@media screen and (max-width: 1000px) {
+    .wrapper {
+        grid-template-areas: "main" "sidebar-right" "sidebar-left";
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        top:130px;
+    }
+    .tools-title {
+        border-top: 1px solid lightgray;
+    }
+    main {
+        grid-template-rows: 2fr minmax(20px, auto) 8fr 1fr;
+    }
+}
+
+/* Model UI Elements */
+.synth-title {
+  grid-area: main-title;
+  /* background-color: var(--c); */
+  font-family: var(--font);
+  font-size: 1.2em;
+  color: var(--c1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.synth-audio-button {
+  padding-top: 20px;
+  padding-left: 5px;
+  grid-area: main-title;
+  /* background-color: var(--c); */
+  font-family: var(--font);
+  font-size: 1em;
+  font-weight: bold;
+  color: var(--c1);
+  align-items: left;
+  justify-content: left;
+  display:flex;
+  opacity: 1;
+}
+
+.synth-info-button {
+  padding-top: 25px;
+  grid-area: main-title;
+  margin-left: 50%;
+}
+.synth-info-button.right {
+
+  width: 50%;
+}
+
+.synth-load-button {
+  height:30;background-color:#99CED4;border-style:none;color:white;font-size: 1em;
+}
+
+.synth-top {
+  grid-area: main-top;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction:column;
+}
+
+.synth-top-row {
+  grid-area: main-top;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction:row;
+}
+
+.row {
+  padding-left: 20px;
+  align-content: center;
+}
+
+.synth-center {
+  grid-area: main-center;
+  align-content: center;
+}
+
+.synth-right {
+  grid-area: main-right;
+  padding-right: 20px;
+}
+
+.synth-left {
+  grid-area: main-left;
+  padding-left: 20px;
+}
+
+.synth_siren-right {
+  grid-area: main-right;
+  padding-right: 50px;
+  font-size: 0.85em;
+}
+
+.synth_siren-left {
+  grid-area: main-left;
+  padding-left: 50px;
+}
+
+.synth-bottom-left {
+  grid-area: main-bottom1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.synth-bottom-right {
+  grid-area: main-bottom3;
+  align-items: center;
+}
+
+.synth-bottom-center {
+  grid-area: main-bottom2;
+}
+
+div.synth-button {
+    margin: auto;
+}
+div.synth-position {
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+}
+div.synth-switch {
+    margin: auto;
+    padding: 8px 0px 8px 0px;
+}
+div.synth-label {
+  width: 100%;
+  height: 30px;
+  font-size: 1em;
+  font-weight: 300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+div.synth-label-select {
+  width: 150px;
+  height: 30px;
+  float: left;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+div.synth-select {
+  height: 30px;
+  margin-left: 300px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+div.synth-envelope{
+  height: 150px;
+  margin-left: 300px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+div.synth-slider {
+  height: 30px;
+  margin-left: 300px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+div.synth-slider-small {
+  width: 230px;
+  height: 30px;
+  float: left;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+div.synth-slider-xsmall {
+  width: 180px;
+  height: 30px;
+  float: left;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+div.synth-group-row {
+  /* width: 300px; */
+  height: 30px;
+  float: left;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;  /* changed from flex-start to allow placing multiple items spaced in a row */
+}
+div.synth-number {
+  margin-left: 300px;
+  height: 30px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Tools Panel */
+
+l-top {
+  background: inherit;
+  display: grid;
+  grid-template-areas: "tools-title tools-title" "rand-button rand-sc" "trigger-button trig-sc" "spat-button none";
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 0.7fr 0.3fr;
+  margin-bottom: 20px;
+  grid-gap: 5px;
+  position: relative;
+}
+
+.tools-title {
+  grid-area: tools-title;
+  background: inherit;
+  font-family: var(--font);
+  font-weight: bolder;
+  font-size: 1.2em;
+  color: var(--c1);
+  position: relative;
+  display: flex;
+  align-items: center;
+  vertical-align: center;
+  justify-content: center;
+}
+
+.random {
+  /* padding-top: 10px; */
+  grid-area: rand-button;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.random-sc {
+  /* padding-top: 10px; */
+  /* padding-left: 25px; */
+  grid-area: rand-sc;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+#randButton-sc{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.trigger {
+  /* padding-top: 10px; */
+  grid-area: trigger-button;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.trigger-sc {
+  /* padding-top: 10px; */
+  /* padding-left: 25px; */
+  grid-area: trig-sc;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+#trigButton-sc{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.spatialisation {
+  grid-area: spat-button;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Preset Panel */
+
+l-bottom {
+  background: inherit;
+  display: grid;
+  grid-template-areas: "preset-title preset-title" "preset-dropdown preset-button" "lb-title lb-title" "record-button record-button" "download-title download-title" "download-links download-links" "info-title info-title" "info-text info-text";
+  grid-template-rows: auto auto auto auto auto minmax(auto, 300px) auto auto;
+  grid-gap: 5px;
+}
+
+.lb-title {
+  grid-area: lb-title;
+  border-top: 1px solid #CDCDCD;
+  background: inherit;
+  font-family: var(--font);
+  font-weight: bolder;
+  font-size: 1.2em;
+  color: var(--c1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.preset-dropdown {
+  grid-area: preset-dropdown;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.preset-button {
+  grid-area: preset-button;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.preset-title {
+  border-top: 1px solid #CDCDCD;
+  grid-area: preset-title;
+  background: inherit;
+  font-family: var(--font);
+  font-weight: bolder;
+  font-size: 1.2em;
+  color: var(--c1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Record Panel */
+
+.rec-button {
+    width: 200%;
+    grid-area: record-button;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.rec-light #counter {
+    margin-left: 92%;
+}
+
+.down-title {
+  border-top: 1px solid #CDCDCD;
+  grid-area: download-title;
+  background: inherit;
+  font-family: var(--font);
+  font-weight: bolder;
+  font-size: 1em;
+  color: var(--c1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.down-links-parent {
+  grid-area: download-links;
+  background: inherit;
+  height: 100%;
+}
+
+.down-audio-files {
+    flex-direction: row;
+    display: flex;
+    height: 400px;
+    overflow-y: scroll;
+}
+
+.down-links {
+/*<<<<<<< HEAD*/
+    /*height: 100%;*/
+  /*overflow-y: scroll;*/
+  /*display: flex;*/
+/*=======*/
+  width: 225px;
+/*>>>>>>> user*/
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.down-links li{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  padding: 10px 0px;
+}
+
+.delete-links .li_1 {
+    margin-top: 14.5px;
+    cursor: pointer;
+    display: block;
+    width: 1.72em;
+    flex: 1;
+    border: 0.23em solid transparent;
+    content:url("../../images/delete_black_transparent.png");
+}
+
+.delete-links .li_n {
+    margin-top: 39px;
+    cursor: pointer;
+    display: block;
+    width: 1.72em;
+    flex: 1;
+    border: 0.23em solid transparent;
+    content:url("../../images/delete_black_transparent.png");
+}
+
+audio::-webkit-media-controls-panel{
+    background-color: white;
+}
+
+.down-links audio{
+    width: 90%;
+    height: 40px;
+    border: 2px solid black;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.down-links a{
+    width: 90%;
+    text-align: center;
+    font-size: 12px;
+}
+
+/* Link styling */
+.down-links a {
+  color: var(--theme-color-4);
+}
+.down-links a:visited {
+  color: var(--theme-color-4);
+}
+.down-links a:hover {
+  color: hotpink;
+}
+.down-links a:active {
+  color: hotpink;
+}
+
+.info-title {
+  border-top: 1px solid #CDCDCD;
+  grid-area: info-title;
+  background: inherit;
+  font-family: var(--font);
+  font-weight: bolder;
+  font-size: 1em;
+  color: var(--c1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.info-box-container {
+  grid-area: info-text;
+  background: inherit;
+  height: 100px;
+}
+
+/* Effects Panel */
+
+r-top {
+  background: inherit;
+  display: grid;
+  grid-template-areas: "fx-title fx-title" "eq-button eq-bypass" "rev-button rev-bypass" "del-button del-bypass" "dist-button dist-bypass" "comp-button comp-bypass";
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 0.7fr 0.3fr;
+  margin-bottom: 20px;
+  grid-gap: 5px;
+  position: relative;
+}
+
+.fx-title {
+    grid-area: fx-title;
+    background: inherit;
+    font-family: var(--font);
+    font-weight: bolder;
+    font-size: 1.2em;
+    color: var(--c1);
+    position: relative;
+    display: flex;
+    align-items: center;
+    vertical-align: center;
+    justify-content: center;
+}
+
+.eq-button {
+  grid-area: eq-button;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.eq-bypass {
+  grid-area: eq-bypass;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.rev-button {
+  grid-area: rev-button;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rev-bypass {
+  grid-area: rev-bypass;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.del-button {
+  grid-area: del-button;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.del-bypass {
+  grid-area: del-bypass;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.dist-button {
+  grid-area: dist-button;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dist-bypass {
+  grid-area: dist-bypass;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.comp-button {
+  grid-area: comp-button;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.comp-bypass {
+  grid-area: comp-bypass;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* Master panel */
+
+r-bottom {
+  background: inherit;
+  display: grid;
+  grid-template-areas: "title" "control" "visualiser";
+  grid-template-rows: auto auto auto;
+}
+
+.master-title {
+  border-top: 1px solid #CDCDCD;
+  grid-area: title;
+  background: inherit;
+  font-family: var(--font);
+  font-weight: bolder;
+  font-size: 1.2em;
+  color: var(--c1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.master-cont {
+  margin: 0;
+  grid-area: control;
+  display: grid;
+  grid-template-areas: "gain-title gain-title pan-title" "gain meter pan" "gain meter master-pan-disp" "gain meter mute-title" "master-gain-disp master-gain-disp mute";
+  grid-template-columns: 0.5fr 0.5fr 1fr;
+  grid-template-rows: 60px 60px 60px 60px 60px;
+}
+.gain-title {
+  grid-area: gain-title;
+  font-family: var(--font);
+  font-weight: bolder;
+  color: var(--c1);
+  padding-top: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pan-title {
+  grid-area: pan-title;
+  font-family: var(--font);
+  font-weight: bolder;
+  color: var(--c1);
+  padding-top: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mute-title {
+  grid-area: mute-title;
+  font-family: var(--font);
+  font-weight: bolder;
+  color: var(--c1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.master-gain-disp {
+  grid-area: master-gain-disp;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 15px;
+}
+
+.master-pan-disp {
+  grid-area: master-pan-disp;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.master-meter {
+  padding: 0.2em;
+  grid-area: meter;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 10px;
+}
+
+.master-gain {
+  padding: 0.2em;
+  grid-area: gain;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 10px;
+}
+
+.master-pan {
+  padding: 0.2em;
+  grid-area: pan;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.master-mute {
+  padding: 0.2em;
+  grid-area: mute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.master-visualiser {
+  grid-area: visualiser;
+  display: grid;
+  grid-template-areas: "canvas" "toggle";
+  grid-template-rows: 1fr 0.3fr;
+}
+
+.visualizer-canvas {
+  grid-area: canvas;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.visualizer-radio {
+  grid-area: toggle;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Post-processing FX control Panel */
+
+.fx-modal {
+  display: none;
+  position: fixed;
+  z-index: 905;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 200%;
+}
+
+.fx-modal-content {
+  /* background-color: #fefefe; */
+  margin: auto;
+  margin-top: 0.5%;
+  /* 15% from the top and centered */
+  /* padding: 3px; */
+  border: 1px solid #888;
+  width: 900px;
+  height: 600px;
+  border-style: none;
+  font-family: Arial, Helvetica, sans-serif;
+  /* Could be more or less, depending on screen size */
+}
+
+.close {
+  color: #E9B000;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  padding: 3px;
+  padding-right: 0.5em;
+  transition: 0.3s;
+}
+
+.close:hover, .close:focus {
+  color: rgb(235, 209, 131);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* The Modal Tabs */
+
+/* Style the tab */
+
+.tab-bar {
+  overflow: hidden;
+  background-color: #3C3C3C;
+  border-bottom: none;
+}
+
+/* Style the buttons that are used to open the tab content */
+
+.tab-bar button {
+  color: white;
+  font-family: var(--font);
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+
+.tab-bar button:hover {
+  color: black;
+  background-color: rgb(216, 238, 212);
+}
+
+/* Create an active/current tablink class */
+
+.tab-bar button:active {
+  color: black;
+  background-color: #CDCDCD !important;
+}
+
+.tab-bar button:focus {
+  color: black;
+  background-color: #CDCDCD !important;
+}
+
+/* Style the tab content */
+
+.tabcontent {
+  display: none;
+  vertical-align: middle;
+  background-color: #CDCDCD;
+  height: 700px;
+}
+
+.effect-holder {
+  vertical-align: middle;
+  background-color: #CDCDCD;
+  height: 630px;
+  width: 100%;
+  display: flex;
+  padding-top: 30px;
+  align-items: center;
+  justify-content: center;
+}
+
+.tls-modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 905;
+  /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 200%;
+}
+
+/* Modal Content/Box */
+
+.tls-modal-content {
+  /* background-color: #fefefe; */
+  margin: 0.5% auto;
+  /* 15% from the top and centered */
+  /* padding: 3px; */
+  width: 1030px;
+  height: auto;
+  border-style: none;
+  /* Could be more or less, depending on screen size */
+}
+
+.tools-holder {
+  padding-top: 20px;
+  font-family: var(--font);
+  color: black;
+}
+
+.spatialisation-holder {
+  font-family: var(--font);
+  color: black;
+}
+
+/* Effect-specific styling */
+
+.effect-container {
+  font-family: var(--font);
+  width: 400px;
+  border-radius: 15px;
+  border-style: none;
+  box-shadow: inset 2px 2px 1px rgba(0, 0, 0, .05);
+}
+
+.fxBypass {
+  display: block;
+  margin: auto;
+  padding-bottom: 4px;
+}
+
+.rcorners {
+  height: 600px;
+  width: 1000px;
+  margin: auto;
+  display: grid;
+  justify-content: center;
+}
+
+section {
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  width: 394px;
+  height: auto;
+  margin: auto;
+  padding: 5px;
+  background-color: #F5F5F5;
+}
+
+div.label {
+  width: 100%;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+div.slider {
+  width: 300px;
+  height: 30px;
+  float: left;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+div.number {
+  margin-left: 300px;
+  height: 30px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+div.center {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+div.right {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: right;
+  justify-content:flex-end;
+}
+
+.effect-header {
+  background-color: transparent;
+  width: 100%;
+  height: 50px;
+  /* padding-left: 25px; */
+  /* padding-right: 25px; */
+  text-align: center;
+  padding-top: 14px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--button-alt-color);
+}
+
+.effect-title {
+  width: 100%;
+  color: var(--c1);
+}
+
+.effect-switch {
+  width: 50%;
+  float: right;
+}
+
+/* Loading Page when downloading a preset from the preset page */
+.loading-screen{
+    position:absolute;
+    width:100%;
+    height:100%;
+    z-index:100;
+    background:white;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
+    font-size: 3.5vh;
+    color: white;
+    font-family: LemonMilk;
+    /*padding-left: 5%;*/
+    /*padding-right: 5%;*/
+    animation: Loading 4s;
+    animation-iteration-count: infinite;
+    transition: 2s;
+}
+
+/* Animation for Loading page */
+
+@keyframes Loading {
+    from {letter-spacing: initial; color: white; background-color: var(--theme-color-1);}
+    50% {letter-spacing: 2px; color: var(--theme-color-4); background-color: var(--theme-color-3);}
+    to {letter-spacing: initial; color: white; background-color: var(--theme-color-1);}
+}
+
+/* Checkout button */
+
+.checkout-login-button {
+  height: 36px;
+  background: #556cd6;
+  color: white;
+  width: 100%;
+  font-size: 14px;
+  border: 0;
+  font-weight: 500;
+  cursor: pointer;
+  letter-spacing: 0.6;
+  border-radius: 6px 6px 6px 6px;
+  transition: all 0.2s ease;
+  box-shadow: 0px 4px 5.5px 0px rgba(0, 0, 0, 0.07);
+  position: relative;
+}
+
+.button__text {
+    transition: all 0.2s;
+}
+
+.button--loading .button__text {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.button--loading::after {
+    content: "";
+    position: absolute;
+    height: 16px;
+    width: 16px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    border: 4px solid transparent;
+    border-top-color: #ffffff;
+    border-radius: 50%;
+    animation: button-loading-spinner 1s ease infinite;
+}
+
+@keyframes button-loading-spinner {
+    from {
+        transform: rotate(0turn);
+    }
+    to {
+        transform: rotate(1turn);
+    }
+}
+
+.checkout-login-button:hover {
+  opacity: 0.8;
+}
+
+#checkout-error-text {
+  color: #cc0033;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 20px;
+  text-shadow: 1px 1px rgba(250,250,250,.3);
+  text-align: center;
+  word-spacing: normal;
+}

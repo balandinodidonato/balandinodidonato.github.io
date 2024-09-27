@@ -1,0 +1,28 @@
+body {
+  background-color: white;
+  width: 100%;
+  height: 100%;
+}
+head {background-color: black;}
+
+.column {
+ float: left;
+ column-rule-width: 33.33%;
+
+}
+
+/* Clear floats after the columns */
+.row:after {
+ content: "";
+ display: table;
+ clear: both;
+}
+
+iframe {
+  outline: none;
+  border:none;
+}
+
+iframe[seamless] {
+  display: block;
+}

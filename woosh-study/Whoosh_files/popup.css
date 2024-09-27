@@ -1,0 +1,110 @@
+.popup {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+/* The actual popup */
+.popup .popuptext{
+    visibility: hidden;
+    width: 400px;
+    background-color: rgba(58, 80, 107, 0.884);
+    color: #FFFFFF;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 1;
+    top: 50px;
+    left: 50%;
+    margin-left: -200px;
+}
+.popup .popuptext a{
+    color: #FFBA49;
+}
+.popup .popuptutorial {
+    visibility: hidden;
+    width: 300px;
+    background-color: rgba(58, 80, 107, 0.884);
+    color: #FFFFFF;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: -150px;
+    left: 50%;
+    margin-left: 30px;
+}
+
+.popup .popupvideotutorial {
+    visibility: hidden;
+    background-color: rgba(58, 80, 107, 0.884);
+    color: #FFFFFF;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: -310px;
+    left: -400px;
+}
+
+.popup-effect{
+    height: 0%;
+    width: 100%;
+    background-color: #3C3C3C;
+    color: white;
+    position: absolute;
+    z-index: 2;
+    overflow: hidden;
+    transition: 0.3s;
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.popup-tool{
+    height: 0%;
+    width: 100%;
+    background-color: #3C3C3C;
+    color: white;
+    position: absolute;
+    z-index: 2;
+    overflow: hidden;
+    transition: 0.3s;
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.popup-tool p{
+    font-size: 15px;
+    text-align: left;
+    word-spacing: normal;
+    padding: 0 10%;
+}
+.popup-effect p{
+    font-size: 15px;
+    text-align: left;
+    word-spacing: normal;
+    padding: 0 10%;
+}
+/* Toggle this class - hide and show the popup */
+.popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+}
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+}
